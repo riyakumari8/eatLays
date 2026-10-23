@@ -1,0 +1,150 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  STUDENT
+  VENDOR
+  ADMIN
+}
+
+enum OrderStatus {
+  PLACED
+  ACCEPTED
+  PREPARING
+  READY
+  COMPLETED
+  CANCELLED
+}
+
+model User {
+  id            String         @id @default(cuid())
+  name          String
+  email         String         @unique
+  passwordHash  String
+  role          Role           @default(STUDENT)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  vendorOutlets VendorOutlet[]
+  orders        Order[]
+
+  @@index([email])
+  @@index([role])
+}
+
+model Outlet {
+  id            String         @id @default(cuid())
+  name          String
+  description   String
+  location      String
+  imageUrl      String
+  isOpen        Boolean        @default(true)
+  acceptsOrders Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  vendorOutlets VendorOutlet[]
+  categories    Category[]
+  menuItems     MenuItem[]
+  orders        Order[]
+
+  @@index([isOpen, acceptsOrders])
+}
+
+model VendorOutlet {
+  id        String   @id @default(cuid())
+  userId    String
+  outletId  String
+  createdAt DateTime @default(now())
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  outlet Outlet @relation(fields: [outletId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, outletId])
+  @@index([userId])
+  @@index([outletId])
+}
+
+model Category {
+  id        String     @id @default(cuid())
+  name      String
+  outletId  String?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  outlet    Outlet?    @relation(fields: [outletId], references: [id], onDelete: Cascade)
+  menuItems MenuItem[]
+
+  @@index([outletId])
+}
+
+model MenuItem {
+  id              String      @id @default(cuid())
+  outletId        String
+  categoryId      String
+  name            String
+  description     String
+  imageUrl        String
+  price           Decimal     @db.Decimal(10, 2)
+  isAvailable     Boolean     @default(true)
+  stockQuantity   Int?        @default(50)
+  prepTimeMinutes Int?        @default(10)
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  outlet     Outlet      @relation(fields: [outletId], references: [id], onDelete: Cascade)
+  category   Category    @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  orderItems OrderItem[]
+
+  @@index([outletId])
+  @@index([categoryId])
+  @@index([isAvailable])
+}
+
+model Order {
+  id                  String      @id @default(cuid())
+  orderNumber         String      @unique
+  pickupCode          String
+  studentId           String
+  outletId            String
+  status              OrderStatus @default(PLACED)
+  subtotal            Decimal     @db.Decimal(10, 2)
+  total               Decimal     @db.Decimal(10, 2)
+  specialInstructions String?
+  placedAt            DateTime    @default(now())
+  acceptedAt          DateTime?
+  preparingAt         DateTime?
+  readyAt             DateTime?
+  completedAt         DateTime?
+  cancelledAt         DateTime?
+  createdAt           DateTime    @default(now())
+  updatedAt           DateTime    @updatedAt
+
+  student User        @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  outlet  Outlet      @relation(fields: [outletId], references: [id], onDelete: Restrict)
+  items   OrderItem[]
+
+  @@index([studentId])
+  @@index([outletId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model OrderItem {
+  id                String   @id @default(cuid())
+  orderId           String
+  menuItemId        String
+  itemNameSnapshot  String
+  unitPriceSnapshot Decimal  @db.Decimal(10, 2)
+  quantity          Int
+  lineTotal         Decimal  @db.Decimal(10, 2)
+
+  order    Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  menuItem MenuItem @relation(fields: [menuItemId], references: [id], onDelete: Restrict)
+
+  @@index([orderId])
+  @@index([menuItemId])
+}

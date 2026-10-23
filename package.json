@@ -1,0 +1,24 @@
+{
+  "name": "eatlays",
+  "version": "1.0.0",
+  "description": "eatLays — Campus Food Pre-Ordering & Queue Management Platform",
+  "scripts": {
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "client": "npm --prefix client run dev",
+    "server": "npm --prefix server run dev",
+    "seed": "npm --prefix server run seed",
+    "prisma:generate": "npm --prefix server run prisma:generate",
+    "prisma:push": "npm --prefix server run prisma:push",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server run start"
+  },
+  "keywords": [
+    "campus-food",
+    "pre-ordering",
+    "queue-management",
+    "canteen",
+    "college"
+  ],
+  "author": "eatLays Team",
+  "license": "ISC"
+}
