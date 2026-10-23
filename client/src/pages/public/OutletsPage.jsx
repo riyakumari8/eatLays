@@ -52,7 +52,7 @@ export default function OutletsPage() {
       </div>
 
       {/* Search and Filters Bar */}
-      <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-200 flex flex-col md:flex-row gap-4 items-center justify-between">
+      <div className="bg-white rounded-[24px] p-4 border-2 border-[#250001] shadow-[5px_5px_0px_#250001] flex flex-col md:flex-row gap-4 items-center justify-between">
         
         {/* Search Input */}
         <div className="relative w-full md:w-96">
@@ -62,7 +62,7 @@ export default function OutletsPage() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by outlet name, dish, or block..."
-            className="w-full pl-11 pr-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#FFB607] focus:ring-2 focus:ring-[#FFB607]/30 text-sm"
+            className="w-full pl-11 pr-4 py-2.5 rounded-xl border-2 border-[#250001] focus:outline-none focus:ring-2 focus:ring-[#FFB607]/50 text-sm"
           />
         </div>
 
@@ -112,10 +112,10 @@ export default function OutletsPage() {
             return (
               <div
                 key={outlet.id}
-                className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl hover:border-[#FFB607] transition-all flex flex-col group"
+                className="bg-white rounded-[28px] overflow-hidden border-2 border-[#250001] shadow-[6px_6px_0px_#250001] hover:shadow-[9px_9px_0px_#250001] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col group"
               >
                 {/* Outlet Image */}
-                <div className="relative h-48 bg-gray-100 overflow-hidden">
+                <div className="relative h-48 bg-gray-100 overflow-hidden border-b-2 border-[#250001]">
                   <img
                     src={outlet.imageUrl}
                     alt={outlet.name}
@@ -123,7 +123,7 @@ export default function OutletsPage() {
                   />
                   <div className="absolute top-3 right-3 flex items-center gap-2">
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-black uppercase shadow-md ${
+                      className={`px-3 py-1 rounded-full text-xs font-black uppercase border-2 border-[#250001] shadow-[2px_2px_0px_#250001] ${
                         isAccepting
                           ? 'bg-emerald-500 text-white'
                           : 'bg-rose-500 text-white'
@@ -156,7 +156,7 @@ export default function OutletsPage() {
                         {outlet.categories.map((c) => (
                           <span
                             key={c.id}
-                            className="px-2 py-0.5 rounded-md bg-[#FCECCB]/60 text-[#250001] text-[11px] font-semibold border border-[#e8d7b3]"
+                            className="px-2 py-0.5 rounded-md bg-[#FCECCB]/80 text-[#250001] text-[11px] font-bold border border-[#250001]"
                           >
                             {c.name}
                           </span>
@@ -174,7 +174,7 @@ export default function OutletsPage() {
 
                     <Link
                       to={`/outlets/${outlet.id}`}
-                      className="px-4 py-2 bg-[#FFB607] hover:bg-[#ffc634] text-[#250001] font-bold text-xs rounded-xl shadow-xs transition-colors flex items-center gap-1.5"
+                      className="px-4 py-2 bg-[#FFB607] hover:bg-[#ffc634] text-[#250001] font-bold text-xs rounded-xl border-2 border-[#250001] shadow-[2.5px_2.5px_0px_#250001] transition-transform active:scale-95 flex items-center gap-1.5"
                     >
                       <span>View Menu</span>
                       <ArrowRight className="w-4 h-4 stroke-[2.5]" />

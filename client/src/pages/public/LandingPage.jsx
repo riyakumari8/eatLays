@@ -130,11 +130,11 @@ export default function LandingPage() {
 
           {/* Hero Right: Engaging Visual Card */}
           <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md bg-[#FFFDF9] rounded-3xl p-6 shadow-2xl border-4 border-[#FFB607] text-[#250001]">
+            <div className="relative mx-auto max-w-md bg-white rounded-[28px] p-6 border-2 border-[#250001] shadow-[8px_8px_0px_#250001] text-[#250001]">
               
               <div className="flex items-center justify-between pb-4 border-b border-gray-100">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-10 h-10 rounded-xl bg-[#590004] text-[#FFB607] flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-xl bg-[#590004] text-[#FFB607] flex items-center justify-center font-bold border-2 border-[#250001] shadow-[2px_2px_0px_#250001]">
                     <UtensilsCrossed className="w-5 h-5" />
                   </div>
                   <div>
@@ -144,13 +144,13 @@ export default function LandingPage() {
                     </p>
                   </div>
                 </div>
-                <span className="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-black uppercase">
+                <span className="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-black uppercase border border-emerald-300">
                   Open
                 </span>
               </div>
 
               {/* Sample live order state preview */}
-              <div className="my-5 p-4 rounded-2xl bg-[#FCECCB]/50 border border-[#FCECCB] space-y-3">
+              <div className="my-5 p-4 rounded-2xl bg-[#FCECCB]/60 border-2 border-[#250001] shadow-[3px_3px_0px_#250001] space-y-3">
                 <div className="flex items-center justify-between text-xs font-bold text-gray-700">
                   <span>Order #EL-1049</span>
                   <span className="text-[#A91314] font-black uppercase">Kitchen Preparing</span>
@@ -160,19 +160,19 @@ export default function LandingPage() {
                 </div>
                 <div className="flex items-center justify-between text-xs">
                   <span className="text-gray-600">Pickup Counter Token:</span>
-                  <span className="px-3 py-1 rounded-lg bg-[#590004] text-[#FFB607] font-mono font-black text-sm">
+                  <span className="px-3 py-1 rounded-xl bg-[#590004] text-[#FFB607] font-mono font-black text-sm border-2 border-[#250001] shadow-[2px_2px_0px_#250001]">
                     PIN 4291
                   </span>
                 </div>
               </div>
 
               <div className="space-y-3">
-                <div className="flex items-center justify-between p-3 rounded-xl bg-gray-50 border border-gray-100">
+                <div className="flex items-center justify-between p-3 rounded-2xl bg-gray-50 border border-gray-200">
                   <div className="flex items-center gap-3">
                     <img 
                       src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=120&auto=format&fit=crop&q=80" 
                       alt="Butter Masala Dosa"
-                      className="w-12 h-12 rounded-lg object-cover" 
+                      className="w-12 h-12 rounded-xl object-cover border border-gray-200" 
                     />
                     <div>
                       <div className="font-bold text-xs text-gray-900">Butter Masala Dosa</div>
@@ -182,12 +182,12 @@ export default function LandingPage() {
                   <span className="font-extrabold text-sm text-[#A91314]">₹65.00</span>
                 </div>
 
-                <div className="flex items-center justify-between p-3 rounded-xl bg-gray-50 border border-gray-100">
+                <div className="flex items-center justify-between p-3 rounded-2xl bg-gray-50 border border-gray-200">
                   <div className="flex items-center gap-3">
                     <img 
                       src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=120&auto=format&fit=crop&q=80" 
                       alt="Tandoori Paneer Roll"
-                      className="w-12 h-12 rounded-lg object-cover" 
+                      className="w-12 h-12 rounded-xl object-cover border border-gray-200" 
                     />
                     <div>
                       <div className="font-bold text-xs text-gray-900">Tandoori Paneer Roll</div>
@@ -201,7 +201,7 @@ export default function LandingPage() {
               <div className="mt-5">
                 <Link
                   to="/outlets"
-                  className="w-full py-3 bg-[#A91314] hover:bg-[#850003] text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2 transition-colors shadow-md"
+                  className="w-full py-3 bg-[#A91314] hover:bg-[#850003] text-white font-bold text-sm rounded-2xl flex items-center justify-center gap-2 transition-transform active:scale-95 border-2 border-[#250001] shadow-[3px_3px_0px_#250001]"
                 >
                   <ShoppingBag className="w-4 h-4" />
                   <span>Browse Canteen Menus</span>
@@ -216,10 +216,10 @@ export default function LandingPage() {
 
       {/* QUICK DEMO TEST BAR */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20">
-        <div className="bg-[#FFFDF9] rounded-2xl p-5 shadow-xl border border-gray-200">
+        <div className="bg-white rounded-[26px] p-5 border-2 border-[#250001] shadow-[6px_6px_0px_#250001]">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#236092]/10 text-[#236092] flex items-center justify-center font-bold">
+              <div className="w-10 h-10 rounded-xl bg-[#236092]/10 text-[#236092] flex items-center justify-center font-bold border-2 border-[#250001] shadow-[2px_2px_0px_#250001]">
                 <Sparkles className="w-5 h-5" />
               </div>
               <div>
@@ -232,7 +232,7 @@ export default function LandingPage() {
               <button
                 onClick={() => handleQuickDemo('student@campus.edu', 'Student123!')}
                 disabled={demoLoginLoading}
-                className="px-3.5 py-2 rounded-xl bg-[#FCECCB] hover:bg-[#fbd99c] text-[#250001] font-bold text-xs transition-colors border border-[#e8cda1] flex items-center gap-1.5"
+                className="px-3.5 py-2 rounded-xl bg-[#FCECCB] hover:bg-[#fbd99c] text-[#250001] font-bold text-xs transition-all border-2 border-[#250001] shadow-[2.5px_2.5px_0px_#250001] active:translate-x-0.5 active:translate-y-0.5 flex items-center gap-1.5"
               >
                 <GraduationCap className="w-3.5 h-3.5 text-[#A91314]" />
                 <span>Student: Alex</span>
@@ -241,7 +241,7 @@ export default function LandingPage() {
               <button
                 onClick={() => handleQuickDemo('vendor.central@campus.edu', 'Vendor123!')}
                 disabled={demoLoginLoading}
-                className="px-3.5 py-2 rounded-xl bg-[#A91314]/10 hover:bg-[#A91314]/20 text-[#A91314] font-bold text-xs transition-colors border border-[#A91314]/20 flex items-center gap-1.5"
+                className="px-3.5 py-2 rounded-xl bg-[#A91314]/10 hover:bg-[#A91314]/20 text-[#A91314] font-bold text-xs transition-all border-2 border-[#250001] shadow-[2.5px_2.5px_0px_#250001] active:translate-x-0.5 active:translate-y-0.5 flex items-center gap-1.5"
               >
                 <Store className="w-3.5 h-3.5 text-[#590004]" />
                 <span>Vendor: Central Canteen</span>
@@ -250,7 +250,7 @@ export default function LandingPage() {
               <button
                 onClick={() => handleQuickDemo('admin@campus.edu', 'Admin123!')}
                 disabled={demoLoginLoading}
-                className="px-3.5 py-2 rounded-xl bg-[#236092]/10 hover:bg-[#236092]/20 text-[#236092] font-bold text-xs transition-colors border border-[#236092]/20 flex items-center gap-1.5"
+                className="px-3.5 py-2 rounded-xl bg-[#236092]/10 hover:bg-[#236092]/20 text-[#236092] font-bold text-xs transition-all border-2 border-[#250001] shadow-[2.5px_2.5px_0px_#250001] active:translate-x-0.5 active:translate-y-0.5 flex items-center gap-1.5"
               >
                 <ShieldCheck className="w-3.5 h-3.5 text-[#236092]" />
                 <span>Campus Admin</span>
@@ -260,60 +260,103 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section id="how-it-works" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#A91314]/10 text-[#A91314] font-bold text-xs uppercase tracking-wider">
-            Simple 4-Step Flow
-          </div>
-          <h2 className="font-display text-3xl sm:text-4xl font-black text-[#250001]">
-            How eatLays Works on Campus
-          </h2>
-          <p className="text-gray-600 text-base">
-            No delivery drivers. No street addresses. Just smart pre-ordering tailored to college class schedules.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      {/* HOW IT WORKS — EXACT SIGNATURE CHUNKY BOXES */}
+      <section id="how-it-works" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+        <div className="bg-[#FDF6E2] rounded-[36px] p-6 sm:p-12 border-2 border-[#250001] shadow-[8px_8px_0px_#250001] space-y-10">
           
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 relative group hover:border-[#FFB607] hover:shadow-md transition-all">
-            <div className="w-12 h-12 rounded-xl bg-[#590004] text-[#FFB607] flex items-center justify-center font-display text-xl font-black mb-4">
-              1
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#A91314] text-white text-xs font-black uppercase tracking-wider shadow-sm">
+              <span>Campus Pickup Flow</span>
             </div>
-            <h3 className="font-bold text-lg text-[#250001] mb-2">Pick Canteen</h3>
-            <p className="text-sm text-gray-600 leading-relaxed">
-              Find campus food spots near your lecture hall or hostel quad with live operating hours.
+            <h2 className="font-display text-3xl sm:text-4xl font-black text-[#250001]">
+              How eatLays Works on Campus
+            </h2>
+            <p className="text-gray-700 text-sm sm:text-base font-medium">
+              Zero waiting in line. Pre-order before your break bell rings.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 relative group hover:border-[#FFB607] hover:shadow-md transition-all">
-            <div className="w-12 h-12 rounded-xl bg-[#A91314] text-white flex items-center justify-center font-display text-xl font-black mb-4">
-              2
-            </div>
-            <h3 className="font-bold text-lg text-[#250001] mb-2">Order Ahead</h3>
-            <p className="text-sm text-gray-600 leading-relaxed">
-              Select dishes, customize special notes, and place your pre-order 10-15 minutes before your break.
-            </p>
-          </div>
+          {/* 3 Chunky Boxes from Screenshot */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            {/* Box 01 */}
+            <div className="bg-white rounded-[28px] p-7 sm:p-8 border-2 border-[#250001] shadow-[6px_6px_0px_#250001] hover:shadow-[8px_8px_0px_#250001] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col justify-between">
+              <div>
+                {/* 01 Number Badge */}
+                <div className="w-14 h-11 rounded-2xl bg-[#850003] text-white flex items-center justify-center font-display font-black text-xl border-2 border-[#250001] shadow-[2.5px_3px_0px_#250001]">
+                  01
+                </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 relative group hover:border-[#FFB607] hover:shadow-md transition-all">
-            <div className="w-12 h-12 rounded-xl bg-[#236092] text-white flex items-center justify-center font-display text-xl font-black mb-4">
-              3
-            </div>
-            <h3 className="font-bold text-lg text-[#250001] mb-2">Track Status</h3>
-            <p className="text-sm text-gray-600 leading-relaxed">
-              Watch real-time kitchen updates: Placed → Accepted → Preparing → Ready for Counter Pickup.
-            </p>
-          </div>
+                <h3 className="font-display text-2xl font-black text-[#250001] mt-6 mb-3 leading-tight">
+                  Pick Canteen & Break Slot
+                </h3>
 
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 relative group hover:border-[#FFB607] hover:shadow-md transition-all">
-            <div className="w-12 h-12 rounded-xl bg-[#FFB607] text-[#250001] flex items-center justify-center font-display text-xl font-black mb-4">
-              4
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Browse canteens in your academic block. Choose when you want it ready (e.g., 10-minute break between periods or 1:15 lunch bell).
+                </p>
+              </div>
+
+              {/* Bottom tag line */}
+              <div className="pt-5 mt-6 border-t border-gray-100 flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-[#236092] shrink-0" />
+                <span className="text-xs font-bold text-[#236092]">
+                  Filtered by Block & Counter
+                </span>
+              </div>
             </div>
-            <h3 className="font-bold text-lg text-[#250001] mb-2">Collect & Eat</h3>
-            <p className="text-sm text-gray-600 leading-relaxed">
-              Flash your 4-digit token at the express pickup counter, grab your piping hot food, and enjoy!
-            </p>
+
+            {/* Box 02 */}
+            <div className="bg-white rounded-[28px] p-7 sm:p-8 border-2 border-[#250001] shadow-[6px_6px_0px_#250001] hover:shadow-[8px_8px_0px_#250001] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col justify-between">
+              <div>
+                {/* 02 Number Badge */}
+                <div className="w-14 h-11 rounded-2xl bg-[#FFB607] text-[#250001] flex items-center justify-center font-display font-black text-xl border-2 border-[#250001] shadow-[2.5px_3px_0px_#250001]">
+                  02
+                </div>
+
+                <h3 className="font-display text-2xl font-black text-[#250001] mt-6 mb-3 leading-tight">
+                  Pre-Order Before Lecture Ends
+                </h3>
+
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Order your favorite rolls, samosas, dosas, or thalis. Pay securely via Student UPI or Campus ID Smart Card at zero extra fee.
+                </p>
+              </div>
+
+              {/* Bottom tag line */}
+              <div className="pt-5 mt-6 border-t border-gray-100 flex items-center gap-2">
+                <ChefHat className="w-4 h-4 text-[#A91314] shrink-0" />
+                <span className="text-xs font-bold text-[#A91314]">
+                  Kitchen queues your food live
+                </span>
+              </div>
+            </div>
+
+            {/* Box 03 */}
+            <div className="bg-white rounded-[28px] p-7 sm:p-8 border-2 border-[#250001] shadow-[6px_6px_0px_#250001] hover:shadow-[8px_8px_0px_#250001] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col justify-between">
+              <div>
+                {/* 03 Number Badge */}
+                <div className="w-14 h-11 rounded-2xl bg-[#236092] text-white flex items-center justify-center font-display font-black text-xl border-2 border-[#250001] shadow-[2.5px_3px_0px_#250001]">
+                  03
+                </div>
+
+                <h3 className="font-display text-2xl font-black text-[#250001] mt-6 mb-3 leading-tight">
+                  Flash Token & Grab It
+                </h3>
+
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Walk right past the crowd queue to the designated <span className="underline decoration-[#FFB607] decoration-2 font-bold text-[#250001]">eatLays Fast Counter</span>, flash your digital token, and enjoy your break.
+                </p>
+              </div>
+
+              {/* Bottom tag line */}
+              <div className="pt-5 mt-6 border-t border-gray-100 flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span className="text-xs font-bold text-emerald-700">
+                  0 Minutes wasted in line
+                </span>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -350,9 +393,9 @@ export default function LandingPage() {
             {outlets.map((outlet) => (
               <div
                 key={outlet.id}
-                className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl hover:border-[#FFB607] transition-all flex flex-col group"
+                className="bg-white rounded-[26px] overflow-hidden border-2 border-[#250001] shadow-[5px_5px_0px_#250001] hover:shadow-[8px_8px_0px_#250001] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col group"
               >
-                <div className="relative h-44 overflow-hidden bg-gray-100">
+                <div className="relative h-44 overflow-hidden bg-gray-100 border-b-2 border-[#250001]">
                   <img
                     src={outlet.imageUrl}
                     alt={outlet.name}
@@ -360,7 +403,7 @@ export default function LandingPage() {
                   />
                   <div className="absolute top-3 right-3">
                     <span
-                      className={`px-2.5 py-1 rounded-full text-xs font-black uppercase shadow ${
+                      className={`px-3 py-1 rounded-full text-xs font-black uppercase border-2 border-[#250001] shadow-[2px_2px_0px_#250001] ${
                         outlet.isOpen && outlet.acceptsOrders
                           ? 'bg-emerald-500 text-white'
                           : 'bg-rose-500 text-white'
@@ -391,7 +434,7 @@ export default function LandingPage() {
                     </span>
                     <Link
                       to={`/outlets/${outlet.id}`}
-                      className="px-3.5 py-1.5 bg-[#FFB607] hover:bg-[#ffc634] text-[#250001] font-bold text-xs rounded-xl shadow-xs transition-colors flex items-center gap-1"
+                      className="px-4 py-2 bg-[#FFB607] hover:bg-[#ffc634] text-[#250001] font-bold text-xs rounded-xl border-2 border-[#250001] shadow-[2px_2px_0px_#250001] transition-transform active:scale-95 flex items-center gap-1"
                     >
                       <span>View Menu</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -407,7 +450,7 @@ export default function LandingPage() {
       {/* POPULAR CAMPUS BITES */}
       {featuredItems.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-          <div className="bg-[#FCECCB]/30 rounded-3xl p-8 border border-[#FCECCB]">
+          <div className="bg-[#FDF6E2] rounded-[32px] p-8 border-2 border-[#250001] shadow-[7px_7px_0px_#250001]">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-2">
               <div>
                 <span className="text-xs uppercase font-extrabold tracking-wider text-[#A91314]">
@@ -429,9 +472,9 @@ export default function LandingPage() {
               {featuredItems.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm flex flex-col justify-between hover:border-[#FFB607] transition-colors"
+                  className="bg-white rounded-[22px] overflow-hidden border-2 border-[#250001] shadow-[4px_4px_0px_#250001] hover:shadow-[6px_6px_0px_#250001] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col justify-between"
                 >
-                  <div className="h-36 overflow-hidden">
+                  <div className="h-36 overflow-hidden border-b-2 border-[#250001]">
                     <img
                       src={item.imageUrl}
                       alt={item.name}
@@ -457,7 +500,7 @@ export default function LandingPage() {
                       </span>
                       <button
                         onClick={() => addToCart(item, outlets[0])}
-                        className="px-3 py-1 bg-[#590004] hover:bg-[#850003] text-[#FFB607] font-bold text-xs rounded-lg transition-colors flex items-center gap-1"
+                        className="px-3 py-1.5 bg-[#590004] hover:bg-[#850003] text-[#FFB607] font-bold text-xs rounded-xl border-2 border-[#250001] shadow-[2px_2px_0px_#250001] transition-transform active:scale-95 flex items-center gap-1"
                       >
                         <span>Add</span>
                         <ShoppingBag className="w-3 h-3" />
@@ -476,8 +519,8 @@ export default function LandingPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {/* For Students */}
-          <div className="bg-[#FFFDF9] rounded-3xl p-8 border-2 border-[#A91314]/20 shadow-md space-y-5">
-            <div className="w-12 h-12 rounded-2xl bg-[#A91314] text-white flex items-center justify-center font-bold">
+          <div className="bg-white rounded-[28px] p-8 border-2 border-[#250001] shadow-[6px_6px_0px_#250001] hover:shadow-[8px_8px_0px_#250001] transition-all space-y-5">
+            <div className="w-12 h-12 rounded-2xl bg-[#A91314] text-white flex items-center justify-center font-bold border-2 border-[#250001] shadow-[3px_3px_0px_#250001]">
               <Users className="w-6 h-6" />
             </div>
             <h3 className="font-display text-2xl font-black text-[#250001]">
@@ -500,8 +543,8 @@ export default function LandingPage() {
           </div>
 
           {/* For Canteen Vendors */}
-          <div className="bg-[#FFFDF9] rounded-3xl p-8 border-2 border-[#236092]/20 shadow-md space-y-5">
-            <div className="w-12 h-12 rounded-2xl bg-[#236092] text-white flex items-center justify-center font-bold">
+          <div className="bg-white rounded-[28px] p-8 border-2 border-[#250001] shadow-[6px_6px_0px_#250001] hover:shadow-[8px_8px_0px_#250001] transition-all space-y-5">
+            <div className="w-12 h-12 rounded-2xl bg-[#236092] text-white flex items-center justify-center font-bold border-2 border-[#250001] shadow-[3px_3px_0px_#250001]">
               <ChefHat className="w-6 h-6" />
             </div>
             <h3 className="font-display text-2xl font-black text-[#250001]">
@@ -528,7 +571,7 @@ export default function LandingPage() {
 
       {/* FINAL CALL TO ACTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        <div className="bg-gradient-to-r from-[#590004] to-[#A91314] rounded-3xl p-10 md:p-14 text-white text-center shadow-xl border-4 border-[#FFB607]">
+        <div className="bg-gradient-to-r from-[#590004] to-[#A91314] rounded-[32px] p-10 md:p-14 text-white text-center border-2 border-[#250001] shadow-[8px_8px_0px_#250001]">
           <h2 className="font-display text-3xl sm:text-4xl font-black mb-4">
             Ready to reclaim your lunch break?
           </h2>
@@ -538,13 +581,13 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/outlets"
-              className="w-full sm:w-auto px-8 py-3.5 bg-[#FFB607] hover:bg-[#ffc634] text-[#250001] font-display text-base tracking-wide rounded-2xl shadow-lg transition-transform hover:scale-105"
+              className="w-full sm:w-auto px-8 py-3.5 bg-[#FFB607] hover:bg-[#ffc634] text-[#250001] font-display text-base tracking-wide rounded-2xl border-2 border-[#250001] shadow-[3px_3px_0px_#250001] transition-transform hover:scale-105"
             >
               Start Pre-Ordering Now
             </Link>
             <Link
               to="/register"
-              className="w-full sm:w-auto px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-2xl transition-colors border border-white/20"
+              className="w-full sm:w-auto px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-2xl transition-colors border-2 border-white/30"
             >
               Create Free Student Account
             </Link>

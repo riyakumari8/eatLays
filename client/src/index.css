@@ -31,6 +31,41 @@ body {
   font-family: "Paytone One", "Titan One", sans-serif;
 }
 
+/* Signature chunky neo-pop cards inspired by eatLays visual reference */
+.box-chunky {
+  background-color: #ffffff;
+  border: 2px solid #250001;
+  border-radius: 28px;
+  box-shadow: 6px 6px 0px #250001;
+  transition: all 0.2s ease-in-out;
+}
+
+.box-chunky:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #250001;
+}
+
+.box-chunky-static {
+  background-color: #ffffff;
+  border: 2px solid #250001;
+  border-radius: 28px;
+  box-shadow: 6px 6px 0px #250001;
+}
+
+.box-chunky-sm {
+  background-color: #ffffff;
+  border: 2px solid #250001;
+  border-radius: 20px;
+  box-shadow: 4px 4px 0px #250001;
+  transition: all 0.2s ease-in-out;
+}
+
+.box-badge {
+  border: 2px solid #250001;
+  border-radius: 14px;
+  box-shadow: 2.5px 3px 0px #250001;
+}
+
 /* Custom subtle scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
