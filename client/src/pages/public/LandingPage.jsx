@@ -13,7 +13,8 @@ import {
   ChefHat, 
   ShieldCheck, 
   ShoppingBag,
-  BellRing
+  BellRing,
+  GraduationCap
 } from 'lucide-react';
 import api from '../../services/api';
 import { useCart } from '../../context/CartContext';
@@ -231,25 +232,28 @@ export default function LandingPage() {
               <button
                 onClick={() => handleQuickDemo('student@campus.edu', 'Student123!')}
                 disabled={demoLoginLoading}
-                className="px-3.5 py-2 rounded-xl bg-[#FCECCB] hover:bg-[#fbd99c] text-[#250001] font-bold text-xs transition-colors border border-[#e8cda1]"
+                className="px-3.5 py-2 rounded-xl bg-[#FCECCB] hover:bg-[#fbd99c] text-[#250001] font-bold text-xs transition-colors border border-[#e8cda1] flex items-center gap-1.5"
               >
-                🎓 Student: Alex
+                <GraduationCap className="w-3.5 h-3.5 text-[#A91314]" />
+                <span>Student: Alex</span>
               </button>
 
               <button
                 onClick={() => handleQuickDemo('vendor.central@campus.edu', 'Vendor123!')}
                 disabled={demoLoginLoading}
-                className="px-3.5 py-2 rounded-xl bg-[#A91314]/10 hover:bg-[#A91314]/20 text-[#A91314] font-bold text-xs transition-colors border border-[#A91314]/20"
+                className="px-3.5 py-2 rounded-xl bg-[#A91314]/10 hover:bg-[#A91314]/20 text-[#A91314] font-bold text-xs transition-colors border border-[#A91314]/20 flex items-center gap-1.5"
               >
-                🍳 Vendor: Central Canteen
+                <Store className="w-3.5 h-3.5 text-[#590004]" />
+                <span>Vendor: Central Canteen</span>
               </button>
 
               <button
                 onClick={() => handleQuickDemo('admin@campus.edu', 'Admin123!')}
                 disabled={demoLoginLoading}
-                className="px-3.5 py-2 rounded-xl bg-[#236092]/10 hover:bg-[#236092]/20 text-[#236092] font-bold text-xs transition-colors border border-[#236092]/20"
+                className="px-3.5 py-2 rounded-xl bg-[#236092]/10 hover:bg-[#236092]/20 text-[#236092] font-bold text-xs transition-colors border border-[#236092]/20 flex items-center gap-1.5"
               >
-                🛡️ Campus Admin
+                <ShieldCheck className="w-3.5 h-3.5 text-[#236092]" />
+                <span>Campus Admin</span>
               </button>
             </div>
           </div>

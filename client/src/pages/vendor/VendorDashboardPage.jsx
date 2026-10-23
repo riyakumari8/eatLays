@@ -177,8 +177,9 @@ export default function VendorDashboardPage() {
 
         {/* Preparing */}
         <div className="bg-white rounded-3xl p-6 border-2 border-[#FFB607] shadow-sm relative overflow-hidden">
-          <div className="text-xs uppercase font-extrabold text-[#A91314] tracking-wider mb-1">
-            In Kitchen 🍳
+          <div className="text-xs uppercase font-extrabold text-[#A91314] tracking-wider mb-1 flex items-center gap-1.5">
+            <ChefHat className="w-3.5 h-3.5" />
+            <span>In Kitchen</span>
           </div>
           <div className="font-display text-4xl font-black text-[#590004]">
             {preparingOrders.length}
@@ -188,8 +189,9 @@ export default function VendorDashboardPage() {
 
         {/* Ready */}
         <div className="bg-white rounded-3xl p-6 border-2 border-emerald-300 shadow-sm relative overflow-hidden">
-          <div className="text-xs uppercase font-extrabold text-emerald-700 tracking-wider mb-1">
-            Ready at Counter 🔔
+          <div className="text-xs uppercase font-extrabold text-emerald-700 tracking-wider mb-1 flex items-center gap-1.5">
+            <BellRing className="w-3.5 h-3.5" />
+            <span>Ready at Counter</span>
           </div>
           <div className="font-display text-4xl font-black text-emerald-800">
             {readyOrders.length}

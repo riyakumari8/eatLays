@@ -111,8 +111,8 @@ export default function VendorOrdersPage() {
           { key: 'ACTIVE', label: 'Active Queue' },
           { key: 'PLACED', label: 'New (Placed)' },
           { key: 'ACCEPTED', label: 'Accepted' },
-          { key: 'PREPARING', label: 'Preparing 🍳' },
-          { key: 'READY', label: 'Ready for Pickup 🔔' },
+          { key: 'PREPARING', label: 'Preparing' },
+          { key: 'READY', label: 'Ready for Pickup' },
           { key: 'COMPLETED', label: 'Completed' },
         ].map((tab) => (
           <button
@@ -280,7 +280,7 @@ export default function VendorOrdersPage() {
                       className="px-5 py-2 bg-[#FFB607] hover:bg-[#ffc634] text-[#250001] font-bold text-xs rounded-xl shadow-xs transition-colors flex items-center gap-1.5"
                     >
                       <ChefHat className="w-4 h-4" />
-                      <span>Start Cooking / Preparing 🍳</span>
+                      <span>Start Cooking / Preparing</span>
                     </button>
                   )}
 
@@ -291,7 +291,7 @@ export default function VendorOrdersPage() {
                       className="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-xs transition-colors flex items-center gap-1.5 animate-pulse"
                     >
                       <BellRing className="w-4 h-4" />
-                      <span>Mark Ready for Pickup 🔔</span>
+                      <span>Mark Ready for Pickup</span>
                     </button>
                   )}
 
@@ -302,7 +302,7 @@ export default function VendorOrdersPage() {
                       className="px-5 py-2.5 bg-[#590004] hover:bg-[#850003] text-[#FFB607] font-black text-xs rounded-xl shadow-md transition-colors flex items-center gap-1.5"
                     >
                       <CheckCircle2 className="w-4 h-4" />
-                      <span>Verify PIN & Mark Collected at Counter ✅</span>
+                      <span>Verify PIN & Mark Collected at Counter</span>
                     </button>
                   )}
 
