@@ -33,17 +33,16 @@ eatLays solves this problem by allowing students to browse canteens across campu
 
 ## Brand Identity & Color Palette
 
-eatLays combines a modern, high-contrast interface with selected **retro-comic accents**: solid ink black (`#17130F`) outlines, restrained 3px/4px offset drop shadows, chunky display typography (*Paytone One*, *Titan One*), and clean body typography (*Plus Jakarta Sans*).
+eatLays combines a modern, high-contrast interface with selected **retro-comic accents**: solid ink black (`#19130F`) outlines, restrained 3px/4px offset drop shadows, chunky display typography (*Paytone One*, *Titan One*), and clean body typography (*Plus Jakarta Sans*).
 
 | Color Token | Hex Code | Semantic Role |
 | :--- | :--- | :--- |
-| **Mustard Yellow** | `#E5AD24` | **Dominant brand color**, hero backgrounds, primary CTAs, active pills |
-| **Deep Crimson Maroon** | `#590004` | Navbar background, terminal banners, dark brand surfaces |
-| **Crimson Red** | `#A91314` | Important highlights, alerts, badges, item prices |
-| **Warm Cream** | `#FCECCB` | Surface cards, pill tags, informative boxes |
-| **Root Beer Dark** | `#250001` | Deep contrast text and dark accents |
-| **Ink Black** | `#17130F` | 2px solid outlines, text headers, restrained offset shadows |
+| **Primary Orange** | `#FF7900` | **Dominant brand color**, hero backgrounds, primary navbar, key CTAs, active pills |
+| **Fiery Red-Orange** | `#FF3D0A` | Highlights, important actions, order buttons, price tags, alerts |
+| **Butter Cream** | `#FFF0B8` | Surface cards, pills, informative boxes, comfortable reading surfaces |
+| **Ink Black** | `#19130F` | Strong typography, 2px solid outlines, restrained offset shadows |
 | **White** | `#FFFFFF` | Clean content surfaces and readability |
+| **Minor Brand Accent** | `#590004` | Optional minor brand accent |
 
 *Strictly zero emojis are used across the application. All icons are rendered via professional Lucide React vector icons.*
 

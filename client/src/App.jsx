@@ -36,7 +36,7 @@ export default function App() {
     <Router>
       <AuthProvider>
         <CartProvider>
-          <div className="min-h-screen flex flex-col bg-[#FFFDF9] text-[#250001]">
+          <div className="min-h-screen flex flex-col bg-[#FFFBF0] text-[#19130F]">
             <Navbar />
             <OutletConflictModal />
             

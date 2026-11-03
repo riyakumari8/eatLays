@@ -113,22 +113,22 @@ export default function VendorMenuPage() {
         <div>
           <Link
             to="/vendor/dashboard"
-            className="inline-flex items-center gap-1.5 text-xs font-black text-[#17130F] hover:text-[#A91314] transition-colors mb-2 bg-white px-3 py-1.5 rounded-xl border-2 border-[#17130F] shadow-[2px_2px_0px_#17130F]"
+            className="inline-flex items-center gap-1.5 text-xs font-black text-[#19130F] hover:text-[#FF3D0A] transition-colors mb-2 bg-white px-3.5 py-1.5 rounded-xl border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]"
           >
             <ArrowLeft className="w-3.5 h-3.5 stroke-[3]" />
             <span>Vendor Dashboard</span>
           </Link>
-          <h1 className="font-display text-3xl sm:text-4xl font-black text-[#17130F]">
+          <h1 className="font-display text-3xl sm:text-4xl font-black text-[#19130F]">
             Menu & Availability Management
           </h1>
-          <p className="text-xs sm:text-sm text-gray-600 font-medium mt-1">
+          <p className="text-xs sm:text-sm text-gray-700 font-bold mt-1">
             Toggle sold-out items instantly during peak rush or add new dishes
           </p>
         </div>
 
         <button
           onClick={() => setShowAddModal(true)}
-          className="self-start sm:self-center px-4 py-2.5 bg-[#E5AD24] hover:bg-[#d69f1b] text-[#17130F] font-black text-xs rounded-xl border-2 border-[#17130F] shadow-[3px_3px_0px_#17130F] flex items-center gap-1.5 active:translate-x-0.5 active:translate-y-0.5 transition-all"
+          className="self-start sm:self-center px-4 py-2.5 bg-[#FF7900] hover:bg-[#E66D00] text-[#19130F] font-black text-xs rounded-xl border-2 border-[#19130F] shadow-[3px_3px_0px_#19130F] flex items-center gap-1.5 active:translate-x-0.5 active:translate-y-0.5 transition-all"
         >
           <Plus className="w-4 h-4 stroke-[3]" />
           <span>Add New Dish</span>
@@ -136,13 +136,13 @@ export default function VendorMenuPage() {
       </div>
 
       {successMsg && (
-        <div className="p-4 bg-emerald-50 border-2 border-emerald-500 rounded-2xl text-xs font-black text-emerald-800 shadow-[2px_2px_0px_#17130F]">
+        <div className="p-4 bg-emerald-50 border-2 border-emerald-500 rounded-2xl text-xs font-black text-emerald-800 shadow-[2px_2px_0px_#19130F]">
           {successMsg}
         </div>
       )}
 
       {errorMsg && (
-        <div className="p-4 bg-rose-50 border-2 border-rose-500 rounded-2xl text-xs font-black text-rose-800 shadow-[2px_2px_0px_#17130F]">
+        <div className="p-4 bg-rose-50 border-2 border-rose-500 rounded-2xl text-xs font-black text-rose-800 shadow-[2px_2px_0px_#19130F]">
           {errorMsg}
         </div>
       )}
@@ -159,7 +159,7 @@ export default function VendorMenuPage() {
           {items.map((item) => (
             <div
               key={item.id}
-              className={`bg-white rounded-3xl p-5 border-2 border-[#17130F] shadow-[4px_4px_0px_#17130F] flex flex-col justify-between transition-all ${
+              className={`bg-white rounded-3xl p-5 border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] flex flex-col justify-between transition-all ${
                 !item.isAvailable ? 'bg-gray-50 opacity-75' : ''
               }`}
             >
@@ -167,19 +167,19 @@ export default function VendorMenuPage() {
                 <img
                   src={item.imageUrl}
                   alt={item.name}
-                  className="w-20 h-20 rounded-2xl object-cover shrink-0 border-2 border-[#17130F]"
+                  className="w-20 h-20 rounded-2xl object-cover shrink-0 border-2 border-[#19130F]"
                 />
                 <div className="flex-1 min-w-0">
-                  <span className="text-[10px] font-black uppercase tracking-wider text-gray-400">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-gray-500">
                     {item.category?.name || 'General'}
                   </span>
-                  <h3 className="font-display text-base font-black text-[#17130F] truncate mt-0.5">
+                  <h3 className="font-display text-base font-black text-[#19130F] truncate mt-0.5">
                     {item.name}
                   </h3>
                   <p className="text-xs text-gray-600 line-clamp-2 mt-1 font-medium">
                     {item.description}
                   </p>
-                  <div className="font-display text-lg font-black text-[#A91314] mt-2">
+                  <div className="font-display text-lg font-black text-[#FF3D0A] mt-2">
                     ₹{Number(item.price).toFixed(2)}
                   </div>
                 </div>
@@ -187,17 +187,17 @@ export default function VendorMenuPage() {
 
               <div className="pt-4 mt-4 border-t-2 border-gray-100 flex items-center justify-between">
                 <div className="text-xs text-gray-500 font-bold flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5 text-gray-500" />
+                  <Clock className="w-3.5 h-3.5 text-gray-500 stroke-[2.5]" />
                   <span>~{item.prepTimeMinutes || 10}m prep</span>
                 </div>
 
                 {/* Availability Toggle */}
                 <button
                   onClick={() => handleToggleAvailability(item.id)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all border-2 border-[#17130F] shadow-[2px_2px_0px_#17130F] active:translate-x-0.5 active:translate-y-0.5 ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 ${
                     item.isAvailable
-                      ? 'bg-emerald-300 text-[#17130F]'
-                      : 'bg-rose-300 text-[#17130F]'
+                      ? 'bg-emerald-300 text-[#19130F]'
+                      : 'bg-rose-300 text-[#19130F]'
                   }`}
                 >
                   {item.isAvailable ? 'In Stock (Available)' : 'Sold Out (Hidden)'}
@@ -211,7 +211,7 @@ export default function VendorMenuPage() {
       {/* Add New Dish Modal */}
       {showAddModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
-          <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-[8px_8px_0px_#17130F] relative border-2 border-[#17130F]">
+          <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-[8px_8px_0px_#19130F] relative border-2 border-[#19130F]">
             <button
               onClick={() => setShowAddModal(false)}
               className="absolute top-5 right-5 p-1.5 rounded-xl text-gray-400 hover:text-gray-600 hover:bg-gray-100 border border-gray-200"
@@ -219,16 +219,16 @@ export default function VendorMenuPage() {
               <X className="w-5 h-5 stroke-[2.5]" />
             </button>
 
-            <h3 className="font-display text-2xl font-black text-[#17130F] mb-1">
+            <h3 className="font-display text-2xl font-black text-[#19130F] mb-1">
               Add New Dish to Menu
             </h3>
-            <p className="text-xs text-gray-600 font-medium mb-6">
+            <p className="text-xs text-gray-600 font-bold mb-6">
               Create a new item available for student counter pickup pre-orders.
             </p>
 
             <form onSubmit={handleAddItem} className="space-y-4">
               <div>
-                <label className="block text-xs font-black text-[#17130F] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-black text-[#19130F] uppercase tracking-wider mb-1">
                   Dish Name *
                 </label>
                 <input
@@ -237,13 +237,13 @@ export default function VendorMenuPage() {
                   value={newItemName}
                   onChange={(e) => setNewItemName(e.target.value)}
                   placeholder="e.g. Schezwan Noodles"
-                  className="w-full p-2.5 rounded-xl border-2 border-[#17130F] focus:outline-none focus:bg-[#FCECCB]/30 text-sm font-semibold"
+                  className="w-full p-2.5 rounded-xl border-2 border-[#19130F] focus:outline-none focus:bg-[#FFF0B8]/30 text-sm font-semibold"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-black text-[#17130F] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-black text-[#19130F] uppercase tracking-wider mb-1">
                     Price (₹) *
                   </label>
                   <input
@@ -253,12 +253,12 @@ export default function VendorMenuPage() {
                     value={newItemPrice}
                     onChange={(e) => setNewItemPrice(e.target.value)}
                     placeholder="75.00"
-                    className="w-full p-2.5 rounded-xl border-2 border-[#17130F] focus:outline-none focus:bg-[#FCECCB]/30 text-sm font-semibold"
+                    className="w-full p-2.5 rounded-xl border-2 border-[#19130F] focus:outline-none focus:bg-[#FFF0B8]/30 text-sm font-semibold"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-black text-[#17130F] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-black text-[#19130F] uppercase tracking-wider mb-1">
                     Prep Time (mins)
                   </label>
                   <input
@@ -266,19 +266,19 @@ export default function VendorMenuPage() {
                     value={newItemPrepTime}
                     onChange={(e) => setNewItemPrepTime(e.target.value)}
                     placeholder="10"
-                    className="w-full p-2.5 rounded-xl border-2 border-[#17130F] focus:outline-none focus:bg-[#FCECCB]/30 text-sm font-semibold"
+                    className="w-full p-2.5 rounded-xl border-2 border-[#19130F] focus:outline-none focus:bg-[#FFF0B8]/30 text-sm font-semibold"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-black text-[#17130F] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-black text-[#19130F] uppercase tracking-wider mb-1">
                   Category
                 </label>
                 <select
                   value={newItemCategoryId}
                   onChange={(e) => setNewItemCategoryId(e.target.value)}
-                  className="w-full p-2.5 rounded-xl border-2 border-[#17130F] focus:outline-none focus:bg-[#FCECCB]/30 text-sm font-semibold bg-white"
+                  className="w-full p-2.5 rounded-xl border-2 border-[#19130F] focus:outline-none focus:bg-[#FFF0B8]/30 text-sm font-semibold bg-white"
                 >
                   {categories.map((c) => (
                     <option key={c.id} value={c.id}>
@@ -289,7 +289,7 @@ export default function VendorMenuPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-black text-[#17130F] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-black text-[#19130F] uppercase tracking-wider mb-1">
                   Description
                 </label>
                 <textarea
@@ -297,12 +297,12 @@ export default function VendorMenuPage() {
                   value={newItemDesc}
                   onChange={(e) => setNewItemDesc(e.target.value)}
                   placeholder="Crispy fried noodles tossed with wok veggies and fiery sauce..."
-                  className="w-full p-2.5 rounded-xl border-2 border-[#17130F] focus:outline-none focus:bg-[#FCECCB]/30 text-sm font-medium resize-none"
+                  className="w-full p-2.5 rounded-xl border-2 border-[#19130F] focus:outline-none focus:bg-[#FFF0B8]/30 text-sm font-medium resize-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-black text-[#17130F] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-black text-[#19130F] uppercase tracking-wider mb-1">
                   Image URL (optional)
                 </label>
                 <input
@@ -310,7 +310,7 @@ export default function VendorMenuPage() {
                   value={newItemImageUrl}
                   onChange={(e) => setNewItemImageUrl(e.target.value)}
                   placeholder="https://images.unsplash.com/..."
-                  className="w-full p-2.5 rounded-xl border-2 border-[#17130F] focus:outline-none focus:bg-[#FCECCB]/30 text-sm font-semibold"
+                  className="w-full p-2.5 rounded-xl border-2 border-[#19130F] focus:outline-none focus:bg-[#FFF0B8]/30 text-sm font-semibold"
                 />
               </div>
 
@@ -318,14 +318,14 @@ export default function VendorMenuPage() {
                 <button
                   type="submit"
                   disabled={modalSubmitting}
-                  className="flex-1 py-3 bg-[#E5AD24] hover:bg-[#d69f1b] text-[#17130F] font-black text-sm rounded-xl border-2 border-[#17130F] shadow-[3px_3px_0px_#17130F] active:translate-x-0.5 active:translate-y-0.5 transition-all disabled:opacity-50"
+                  className="flex-1 py-3 bg-[#FF7900] hover:bg-[#E66D00] text-[#19130F] font-black text-sm rounded-xl border-2 border-[#19130F] shadow-[3px_3px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 transition-all disabled:opacity-50"
                 >
                   {modalSubmitting ? 'Adding...' : 'Add Dish to Menu'}
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowAddModal(false)}
-                  className="py-3 px-5 border-2 border-[#17130F] text-gray-700 font-black text-sm rounded-xl hover:bg-gray-50"
+                  className="py-3 px-5 border-2 border-[#19130F] text-gray-700 font-black text-sm rounded-xl hover:bg-gray-50"
                 >
                   Cancel
                 </button>
