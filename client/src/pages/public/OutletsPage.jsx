@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, MapPin, ArrowRight, Store, Filter, Clock, Utensils } from 'lucide-react';
+import { Search, MapPin, ArrowRight, Store, Filter, Clock, Utensils, Sparkles } from 'lucide-react';
 import api from '../../services/api';
 
 export default function OutletsPage() {
@@ -39,43 +39,43 @@ export default function OutletsPage() {
       
       {/* Page Header */}
       <div className="space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#A91314]/10 text-[#A91314] text-xs font-black uppercase tracking-wider">
-          <Store className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E5AD24] text-[#17130F] text-xs font-black uppercase tracking-wider border-2 border-[#17130F] shadow-[2px_2px_0px_#17130F]">
+          <Store className="w-3.5 h-3.5 stroke-[2.5]" />
           <span>Campus Food Locations</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-black text-[#250001]">
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-[#17130F] tracking-tight">
           Explore Campus Canteens
         </h1>
-        <p className="text-gray-600 text-sm sm:text-base max-w-2xl">
+        <p className="text-gray-700 text-sm sm:text-base max-w-2xl font-medium leading-relaxed">
           Browse food outlets across the campus, check live menu availability, and pre-order for immediate pickup between lectures.
         </p>
       </div>
 
       {/* Search and Filters Bar */}
-      <div className="bg-white rounded-[24px] p-4 border-2 border-[#250001] shadow-[5px_5px_0px_#250001] flex flex-col md:flex-row gap-4 items-center justify-between">
+      <div className="bg-white rounded-2xl p-4 sm:p-5 border-2 border-[#17130F] shadow-[4px_4px_0px_#17130F] flex flex-col md:flex-row gap-4 items-center justify-between">
         
         {/* Search Input */}
         <div className="relative w-full md:w-96">
-          <Search className="w-5 h-5 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-5 h-5 text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search by outlet name, dish, or block..."
-            className="w-full pl-11 pr-4 py-2.5 rounded-xl border-2 border-[#250001] focus:outline-none focus:ring-2 focus:ring-[#FFB607]/50 text-sm"
+            placeholder="Search by canteen name, dish, or block..."
+            className="w-full pl-11 pr-4 py-2.5 rounded-xl border-2 border-[#17130F] focus:outline-none focus:bg-[#FCECCB]/30 text-sm font-semibold placeholder:font-normal placeholder:text-gray-400"
           />
         </div>
 
         {/* Filter Toggle */}
         <div className="flex items-center gap-3 w-full md:w-auto justify-end">
-          <label className="flex items-center gap-2.5 cursor-pointer text-sm font-semibold text-gray-700 select-none">
+          <label className="flex items-center gap-2.5 cursor-pointer text-xs sm:text-sm font-bold text-[#17130F] select-none bg-[#FCECCB]/60 hover:bg-[#FCECCB] px-3.5 py-2 rounded-xl border-2 border-[#17130F] transition-colors">
             <input
               type="checkbox"
               checked={acceptingOnly}
               onChange={(e) => setAcceptingOnly(e.target.checked)}
               className="w-4 h-4 rounded text-[#A91314] focus:ring-[#A91314] accent-[#A91314]"
             />
-            <span>Open & Accepting Orders Only</span>
+            <span>Accepting Orders Only</span>
           </label>
         </div>
 
@@ -85,14 +85,16 @@ export default function OutletsPage() {
       {loading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="bg-white rounded-2xl h-80 animate-pulse border border-gray-200" />
+            <div key={i} className="bg-white rounded-3xl h-88 animate-pulse border-2 border-gray-200" />
           ))}
         </div>
       ) : outlets.length === 0 ? (
-        <div className="text-center py-16 bg-white rounded-2xl border border-gray-200 p-8">
-          <Store className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-          <h3 className="font-bold text-lg text-gray-800 mb-1">No campus outlets found</h3>
-          <p className="text-sm text-gray-500 max-w-sm mx-auto mb-4">
+        <div className="text-center py-16 bg-white rounded-3xl border-2 border-[#17130F] shadow-[5px_5px_0px_#17130F] p-8 max-w-lg mx-auto">
+          <div className="w-14 h-14 rounded-2xl bg-[#FCECCB] text-[#590004] border-2 border-[#17130F] flex items-center justify-center mx-auto mb-4 shadow-[2px_2px_0px_#17130F]">
+            <Store className="w-7 h-7 stroke-[2.5]" />
+          </div>
+          <h3 className="font-display text-xl font-black text-[#17130F] mb-2">No campus outlets found</h3>
+          <p className="text-xs sm:text-sm text-gray-600 max-w-sm mx-auto mb-6">
             Try adjusting your search criteria or uncheck the "Accepting Orders Only" filter.
           </p>
           <button
@@ -100,7 +102,7 @@ export default function OutletsPage() {
               setSearch('');
               setAcceptingOnly(false);
             }}
-            className="px-4 py-2 bg-[#A91314] text-white text-xs font-bold rounded-xl"
+            className="px-5 py-2.5 bg-[#E5AD24] text-[#17130F] text-xs font-black rounded-xl border-2 border-[#17130F] shadow-[3px_3px_0px_#17130F] hover:shadow-[1px_1px_0px_#17130F] active:translate-x-0.5 active:translate-y-0.5 transition-all"
           >
             Reset Filters
           </button>
@@ -112,10 +114,10 @@ export default function OutletsPage() {
             return (
               <div
                 key={outlet.id}
-                className="bg-white rounded-[28px] overflow-hidden border-2 border-[#250001] shadow-[6px_6px_0px_#250001] hover:shadow-[9px_9px_0px_#250001] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col group"
+                className="bg-white rounded-3xl overflow-hidden border-2 border-[#17130F] shadow-[5px_5px_0px_#17130F] hover:shadow-[8px_8px_0px_#17130F] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col group"
               >
                 {/* Outlet Image */}
-                <div className="relative h-48 bg-gray-100 overflow-hidden border-b-2 border-[#250001]">
+                <div className="relative h-48 bg-gray-100 overflow-hidden border-b-2 border-[#17130F]">
                   <img
                     src={outlet.imageUrl}
                     alt={outlet.name}
@@ -123,10 +125,10 @@ export default function OutletsPage() {
                   />
                   <div className="absolute top-3 right-3 flex items-center gap-2">
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-black uppercase border-2 border-[#250001] shadow-[2px_2px_0px_#250001] ${
+                      className={`px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider border-2 border-[#17130F] shadow-[2px_2px_0px_#17130F] ${
                         isAccepting
-                          ? 'bg-emerald-500 text-white'
-                          : 'bg-rose-500 text-white'
+                          ? 'bg-emerald-400 text-[#17130F]'
+                          : 'bg-rose-400 text-[#17130F]'
                       }`}
                     >
                       {isAccepting ? 'Open' : 'Closed'}
@@ -137,12 +139,12 @@ export default function OutletsPage() {
                 {/* Outlet Details */}
                 <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                   <div>
-                    <h3 className="font-display text-xl font-black text-[#250001] mb-1 group-hover:text-[#A91314] transition-colors">
+                    <h3 className="font-display text-xl font-black text-[#17130F] mb-1 group-hover:text-[#A91314] transition-colors leading-snug">
                       {outlet.name}
                     </h3>
                     
-                    <p className="text-xs text-gray-500 flex items-center gap-1.5 mb-3 font-medium">
-                      <MapPin className="w-3.5 h-3.5 text-[#A91314] shrink-0" />
+                    <p className="text-xs text-gray-600 flex items-center gap-1.5 mb-2.5 font-bold">
+                      <MapPin className="w-3.5 h-3.5 text-[#A91314] shrink-0 stroke-[2.5]" />
                       <span className="truncate">{outlet.location}</span>
                     </p>
 
@@ -156,7 +158,7 @@ export default function OutletsPage() {
                         {outlet.categories.map((c) => (
                           <span
                             key={c.id}
-                            className="px-2 py-0.5 rounded-md bg-[#FCECCB]/80 text-[#250001] text-[11px] font-bold border border-[#250001]"
+                            className="px-2 py-0.5 rounded-md bg-[#FCECCB] text-[#17130F] text-[11px] font-black border border-[#17130F]"
                           >
                             {c.name}
                           </span>
@@ -166,18 +168,18 @@ export default function OutletsPage() {
                   </div>
 
                   {/* Footer Action */}
-                  <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
-                    <span className="text-xs font-bold text-gray-500 flex items-center gap-1">
-                      <Utensils className="w-3.5 h-3.5 text-gray-400" />
-                      <span>{outlet._count?.menuItems || 0} items on menu</span>
+                  <div className="pt-4 border-t-2 border-gray-100 flex items-center justify-between">
+                    <span className="text-xs font-bold text-gray-600 flex items-center gap-1">
+                      <Utensils className="w-3.5 h-3.5 text-gray-500" />
+                      <span>{outlet._count?.menuItems || 0} items</span>
                     </span>
 
                     <Link
                       to={`/outlets/${outlet.id}`}
-                      className="px-4 py-2 bg-[#FFB607] hover:bg-[#ffc634] text-[#250001] font-bold text-xs rounded-xl border-2 border-[#250001] shadow-[2.5px_2.5px_0px_#250001] transition-transform active:scale-95 flex items-center gap-1.5"
+                      className="px-4 py-2 bg-[#E5AD24] hover:bg-[#d69f1b] text-[#17130F] font-black text-xs rounded-xl border-2 border-[#17130F] shadow-[3px_3px_0px_#17130F] hover:shadow-[1px_1px_0px_#17130F] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center gap-1.5"
                     >
                       <span>View Menu</span>
-                      <ArrowRight className="w-4 h-4 stroke-[2.5]" />
+                      <ArrowRight className="w-4 h-4 stroke-[3]" />
                     </Link>
                   </div>
                 </div>

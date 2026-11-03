@@ -75,31 +75,31 @@ export default function VendorOrdersPage() {
         <div>
           <Link
             to="/vendor/dashboard"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-500 hover:text-[#A91314] transition-colors mb-2"
+            className="inline-flex items-center gap-1.5 text-xs font-black text-[#17130F] hover:text-[#A91314] transition-colors mb-2 bg-white px-3 py-1.5 rounded-xl border-2 border-[#17130F] shadow-[2px_2px_0px_#17130F]"
           >
-            <ArrowLeft className="w-3.5 h-3.5" />
+            <ArrowLeft className="w-3.5 h-3.5 stroke-[3]" />
             <span>Vendor Dashboard</span>
           </Link>
-          <h1 className="font-display text-3xl font-black text-[#250001]">
+          <h1 className="font-display text-3xl sm:text-4xl font-black text-[#17130F]">
             Kitchen Pre-Orders Queue
           </h1>
-          <p className="text-xs sm:text-sm text-gray-500 mt-1">
+          <p className="text-xs sm:text-sm text-gray-600 font-medium mt-1">
             Accept pre-orders, update kitchen states, and verify counter pickup tokens
           </p>
         </div>
 
         <button
           onClick={() => fetchOrders(false)}
-          className="self-start sm:self-center px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold rounded-xl flex items-center gap-1.5 transition-colors"
+          className="self-start sm:self-center px-4 py-2 bg-white hover:bg-gray-50 text-[#17130F] text-xs font-black rounded-xl border-2 border-[#17130F] shadow-[2.5px_2.5px_0px_#17130F] flex items-center gap-1.5 active:translate-x-0.5 active:translate-y-0.5 transition-all"
         >
-          <RefreshCw className="w-3.5 h-3.5" />
+          <RefreshCw className="w-3.5 h-3.5 stroke-[2.5]" />
           <span>Refresh Queue</span>
         </button>
       </div>
 
       {errorMsg && (
-        <div className="p-4 bg-rose-50 border-l-4 border-rose-500 rounded-r-2xl flex items-center gap-3 text-xs text-rose-800 font-semibold">
-          <AlertCircle className="w-5 h-5 text-rose-600 shrink-0" />
+        <div className="p-4 bg-rose-50 border-2 border-rose-500 rounded-2xl flex items-center gap-3 text-xs text-rose-800 font-bold shadow-[3px_3px_0px_#17130F]">
+          <AlertCircle className="w-5 h-5 text-rose-600 shrink-0 stroke-[2.5]" />
           <span>{errorMsg}</span>
         </div>
       )}
@@ -118,10 +118,10 @@ export default function VendorOrdersPage() {
           <button
             key={tab.key}
             onClick={() => setFilterStatus(tab.key)}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
+            className={`px-4 py-2 rounded-xl text-xs font-black transition-all whitespace-nowrap border-2 border-[#17130F] ${
               filterStatus === tab.key
-                ? 'bg-[#590004] text-[#FFB607] shadow-sm'
-                : 'bg-white text-gray-600 border border-gray-200 hover:border-gray-300'
+                ? 'bg-[#E5AD24] text-[#17130F] shadow-[3px_3px_0px_#17130F]'
+                : 'bg-white text-gray-600 hover:bg-gray-50 shadow-[1.5px_1.5px_0px_#17130F]'
             }`}
           >
             {tab.label}
@@ -133,16 +133,18 @@ export default function VendorOrdersPage() {
       {loading ? (
         <div className="space-y-4">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="h-44 bg-gray-100 rounded-3xl animate-pulse" />
+            <div key={i} className="h-44 bg-gray-100 rounded-3xl animate-pulse border-2 border-gray-200" />
           ))}
         </div>
       ) : filteredOrders.length === 0 ? (
-        <div className="text-center py-16 bg-white rounded-3xl border border-gray-200 p-8">
-          <ChefHat className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-          <h3 className="font-bold text-lg text-gray-800 mb-1">
+        <div className="text-center py-16 bg-white rounded-3xl border-2 border-[#17130F] shadow-[5px_5px_0px_#17130F] p-8 max-w-lg mx-auto">
+          <div className="w-16 h-16 rounded-3xl bg-[#FCECCB] text-[#590004] border-2 border-[#17130F] flex items-center justify-center mx-auto mb-4 shadow-[3px_3px_0px_#17130F]">
+            <ChefHat className="w-8 h-8 stroke-[2.5]" />
+          </div>
+          <h3 className="font-display text-xl font-black text-[#17130F] mb-1">
             No orders found in this category
           </h3>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-gray-600 font-medium">
             Incoming orders will appear here automatically with live polling.
           </p>
         </div>
@@ -154,28 +156,28 @@ export default function VendorOrdersPage() {
             return (
               <div
                 key={order.id}
-                className="bg-white rounded-3xl p-6 border-2 border-gray-200 shadow-sm hover:border-[#FFB607] transition-all space-y-4"
+                className="bg-white rounded-3xl p-6 border-2 border-[#17130F] shadow-[5px_5px_0px_#17130F] space-y-4"
               >
                 {/* Top Row: Order ID, Status, Pickup Token & Time */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-gray-100 gap-3">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b-2 border-gray-100 gap-3">
                   <div className="flex items-center gap-3">
-                    <span className="font-mono font-black text-base text-[#250001]">
+                    <span className="font-mono font-black text-lg text-[#17130F]">
                       #{order.orderNumber}
                     </span>
 
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-black uppercase ${
+                      className={`px-3 py-1 rounded-full text-xs font-black uppercase border-2 border-[#17130F] shadow-[2px_2px_0px_#17130F] ${
                         order.status === 'PLACED'
-                          ? 'bg-blue-100 text-blue-800'
+                          ? 'bg-blue-300 text-[#17130F]'
                           : order.status === 'ACCEPTED'
-                          ? 'bg-amber-100 text-amber-800'
+                          ? 'bg-amber-300 text-[#17130F]'
                           : order.status === 'PREPARING'
-                          ? 'bg-[#FFB607]/20 text-[#590004]'
+                          ? 'bg-[#E5AD24] text-[#17130F]'
                           : order.status === 'READY'
-                          ? 'bg-emerald-100 text-emerald-800 font-extrabold animate-pulse'
+                          ? 'bg-emerald-300 text-[#17130F] animate-pulse'
                           : order.status === 'COMPLETED'
-                          ? 'bg-gray-100 text-gray-600'
-                          : 'bg-rose-100 text-rose-800'
+                          ? 'bg-gray-200 text-gray-700'
+                          : 'bg-rose-300 text-[#17130F]'
                       }`}
                     >
                       {order.status}
@@ -183,12 +185,12 @@ export default function VendorOrdersPage() {
                   </div>
 
                   <div className="flex items-center gap-4">
-                    <div className="px-3 py-1.5 rounded-xl bg-[#FCECCB] border border-[#e5d4b0] text-[#250001] flex items-center gap-1.5">
+                    <div className="px-3.5 py-1.5 rounded-xl bg-[#FCECCB] border-2 border-[#17130F] text-[#17130F] flex items-center gap-1.5 shadow-[2px_2px_0px_#17130F]">
                       <span className="text-[10px] font-black uppercase text-[#A91314]">Pickup PIN:</span>
                       <span className="font-mono font-black text-sm">{order.pickupCode}</span>
                     </div>
 
-                    <span className="text-xs text-gray-400 font-medium">
+                    <span className="text-xs text-gray-500 font-bold">
                       {new Date(order.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </span>
                   </div>
@@ -198,21 +200,21 @@ export default function VendorOrdersPage() {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
                   {/* Items */}
                   <div className="md:col-span-8 space-y-2">
-                    <div className="text-xs font-bold text-gray-400 uppercase tracking-wider">
+                    <div className="text-xs font-black text-gray-500 uppercase tracking-wider">
                       Ordered Dishes ({order.items?.length})
                     </div>
-                    <div className="divide-y divide-gray-100">
+                    <div className="divide-y-2 divide-gray-100">
                       {order.items?.map((item) => (
                         <div key={item.id} className="py-2 flex items-center justify-between text-xs sm:text-sm">
                           <div className="flex items-center gap-2">
-                            <span className="w-6 h-6 rounded-md bg-[#590004] text-[#FFB607] font-bold text-xs flex items-center justify-center">
+                            <span className="w-6 h-6 rounded-md bg-[#590004] text-[#E5AD24] font-black text-xs flex items-center justify-center border border-[#17130F]">
                               {item.quantity}×
                             </span>
-                            <span className="font-bold text-gray-800">
+                            <span className="font-black text-[#17130F]">
                               {item.itemNameSnapshot}
                             </span>
                           </div>
-                          <span className="font-mono text-gray-600 font-semibold">
+                          <span className="font-mono text-[#17130F] font-bold">
                             ₹{Number(item.lineTotal).toFixed(2)}
                           </span>
                         </div>
@@ -220,28 +222,28 @@ export default function VendorOrdersPage() {
                     </div>
 
                     {order.specialInstructions && (
-                      <div className="p-3 bg-amber-50/70 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-start gap-2 mt-2">
-                        <MessageSquare className="w-3.5 h-3.5 text-amber-700 shrink-0 mt-0.5" />
+                      <div className="p-3 bg-[#FCECCB] border-2 border-[#17130F] rounded-2xl text-xs text-[#17130F] flex items-start gap-2 mt-2 font-medium">
+                        <MessageSquare className="w-4 h-4 text-[#A91314] shrink-0 mt-0.5 stroke-[2.5]" />
                         <div>
-                          <strong>Student Note:</strong> {order.specialInstructions}
+                          <strong className="font-black text-[#590004]">Student Note:</strong> {order.specialInstructions}
                         </div>
                       </div>
                     )}
                   </div>
 
                   {/* Student & Price Summary */}
-                  <div className="md:col-span-4 bg-gray-50 rounded-2xl p-4 border border-gray-100 flex flex-col justify-between space-y-3">
+                  <div className="md:col-span-4 bg-[#FCECCB]/40 rounded-2xl p-4 border-2 border-[#17130F] flex flex-col justify-between space-y-3">
                     <div>
-                      <span className="text-[11px] font-bold text-gray-400 uppercase">Student</span>
-                      <div className="font-bold text-xs text-gray-900 mt-0.5 flex items-center gap-1.5">
-                        <User className="w-3.5 h-3.5 text-gray-400" />
+                      <span className="text-[10px] font-black text-gray-500 uppercase tracking-wider">Student</span>
+                      <div className="font-black text-xs text-[#17130F] mt-1 flex items-center gap-1.5">
+                        <User className="w-3.5 h-3.5 text-gray-500 stroke-[2.5]" />
                         <span>{order.student?.name}</span>
                       </div>
-                      <div className="text-[11px] text-gray-500 pl-5">{order.student?.email}</div>
+                      <div className="text-[11px] text-gray-600 pl-5 font-semibold truncate">{order.student?.email}</div>
                     </div>
 
-                    <div className="pt-2 border-t border-gray-200 flex justify-between items-baseline">
-                      <span className="text-xs font-bold text-gray-500">Total to Collect:</span>
+                    <div className="pt-2 border-t-2 border-[#17130F] flex justify-between items-baseline">
+                      <span className="text-xs font-black text-[#17130F]">Total to Collect:</span>
                       <span className="font-display text-xl font-black text-[#A91314]">
                         ₹{Number(order.total).toFixed(2)}
                       </span>
@@ -250,13 +252,13 @@ export default function VendorOrdersPage() {
                 </div>
 
                 {/* Bottom Row: Kitchen Action Controls */}
-                <div className="pt-3 border-t border-gray-100 flex flex-wrap items-center justify-end gap-2.5">
+                <div className="pt-3 border-t-2 border-gray-100 flex flex-wrap items-center justify-end gap-2.5">
                   {order.status === 'PLACED' && (
                     <>
                       <button
                         onClick={() => handleUpdateStatus(order.id, 'ACCEPTED')}
                         disabled={isProcessing}
-                        className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-xs transition-colors flex items-center gap-1.5"
+                        className="px-4 py-2 bg-emerald-400 hover:bg-emerald-500 text-[#17130F] font-black text-xs rounded-xl border-2 border-[#17130F] shadow-[2.5px_2.5px_0px_#17130F] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center gap-1.5"
                       >
                         <Check className="w-4 h-4 stroke-[3]" />
                         <span>Accept Pre-Order</span>
@@ -265,9 +267,9 @@ export default function VendorOrdersPage() {
                       <button
                         onClick={() => handleUpdateStatus(order.id, 'CANCELLED')}
                         disabled={isProcessing}
-                        className="px-3.5 py-2 bg-rose-50 text-rose-700 hover:bg-rose-100 font-bold text-xs rounded-xl transition-colors flex items-center gap-1"
+                        className="px-3.5 py-2 bg-rose-100 text-[#17130F] hover:bg-rose-200 font-black text-xs rounded-xl border-2 border-[#17130F] shadow-[2px_2px_0px_#17130F] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center gap-1"
                       >
-                        <X className="w-4 h-4" />
+                        <X className="w-4 h-4 stroke-[2.5]" />
                         <span>Reject</span>
                       </button>
                     </>
@@ -277,9 +279,9 @@ export default function VendorOrdersPage() {
                     <button
                       onClick={() => handleUpdateStatus(order.id, 'PREPARING')}
                       disabled={isProcessing}
-                      className="px-5 py-2 bg-[#FFB607] hover:bg-[#ffc634] text-[#250001] font-bold text-xs rounded-xl shadow-xs transition-colors flex items-center gap-1.5"
+                      className="px-5 py-2.5 bg-[#E5AD24] hover:bg-[#d69f1b] text-[#17130F] font-black text-xs rounded-xl border-2 border-[#17130F] shadow-[3px_3px_0px_#17130F] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center gap-1.5"
                     >
-                      <ChefHat className="w-4 h-4" />
+                      <ChefHat className="w-4 h-4 stroke-[2.5]" />
                       <span>Start Cooking / Preparing</span>
                     </button>
                   )}
@@ -288,9 +290,9 @@ export default function VendorOrdersPage() {
                     <button
                       onClick={() => handleUpdateStatus(order.id, 'READY')}
                       disabled={isProcessing}
-                      className="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-xs transition-colors flex items-center gap-1.5 animate-pulse"
+                      className="px-5 py-2.5 bg-emerald-400 hover:bg-emerald-500 text-[#17130F] font-black text-xs rounded-xl border-2 border-[#17130F] shadow-[3px_3px_0px_#17130F] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center gap-1.5 animate-pulse"
                     >
-                      <BellRing className="w-4 h-4" />
+                      <BellRing className="w-4 h-4 stroke-[2.5]" />
                       <span>Mark Ready for Pickup</span>
                     </button>
                   )}
@@ -299,22 +301,24 @@ export default function VendorOrdersPage() {
                     <button
                       onClick={() => handleUpdateStatus(order.id, 'COMPLETED')}
                       disabled={isProcessing}
-                      className="px-5 py-2.5 bg-[#590004] hover:bg-[#850003] text-[#FFB607] font-black text-xs rounded-xl shadow-md transition-colors flex items-center gap-1.5"
+                      className="px-5 py-2.5 bg-[#590004] hover:bg-[#720005] text-[#E5AD24] font-black text-xs rounded-xl border-2 border-[#17130F] shadow-[4px_4px_0px_#17130F] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center gap-1.5"
                     >
-                      <CheckCircle2 className="w-4 h-4" />
+                      <CheckCircle2 className="w-4 h-4 stroke-[2.5]" />
                       <span>Verify PIN & Mark Collected at Counter</span>
                     </button>
                   )}
 
                   {order.status === 'COMPLETED' && (
-                    <span className="text-xs font-bold text-gray-400 flex items-center gap-1">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                    <span className="text-xs font-black text-emerald-700 flex items-center gap-1 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-300">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 stroke-[2.5]" />
                       <span>Collected by student</span>
                     </span>
                   )}
 
                   {order.status === 'CANCELLED' && (
-                    <span className="text-xs font-bold text-rose-500">Order cancelled</span>
+                    <span className="text-xs font-black text-rose-600 bg-rose-50 px-3 py-1.5 rounded-xl border border-rose-300">
+                      Order cancelled
+                    </span>
                   )}
                 </div>
 

@@ -11,47 +11,47 @@ export default function OutletConflictModal() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-fadeIn">
-      <div className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border-2 border-[#A91314]/20 relative">
+      <div className="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-[8px_8px_0px_#17130F] border-2 border-[#17130F] relative">
         <button
           onClick={cancelSwitchOutlet}
-          className="absolute top-4 right-4 p-1 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100"
+          className="absolute top-5 right-5 p-1.5 rounded-xl text-gray-400 hover:text-gray-600 hover:bg-gray-100 border border-gray-200"
         >
-          <X className="w-5 h-5" />
+          <X className="w-5 h-5 stroke-[2.5]" />
         </button>
 
-        <div className="w-12 h-12 rounded-xl bg-[#A91314]/10 text-[#A91314] flex items-center justify-center mb-4">
-          <AlertCircle className="w-6 h-6" />
+        <div className="w-14 h-14 rounded-2xl bg-[#FCECCB] text-[#590004] border-2 border-[#17130F] shadow-[2px_2px_0px_#17130F] flex items-center justify-center mb-4">
+          <AlertCircle className="w-7 h-7 stroke-[2.5]" />
         </div>
 
-        <h3 className="font-display text-xl text-[#250001] mb-2">
+        <h3 className="font-display text-2xl font-black text-[#17130F] mb-2">
           Replace Cart Items?
         </h3>
 
-        <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+        <p className="text-sm text-gray-700 mb-4 leading-relaxed font-medium">
           Your cart currently contains items from <strong className="text-[#590004]">{existingOutlet.name}</strong>. Because food is prepared fresh for counter pickup, each order must belong to a single campus canteen.
         </p>
 
-        <div className="bg-[#FCECCB]/40 rounded-xl p-3 border border-[#FCECCB] mb-5 text-xs text-gray-700 space-y-1">
+        <div className="bg-[#FCECCB] rounded-2xl p-4 border-2 border-[#17130F] mb-6 text-xs text-gray-800 space-y-1 font-semibold">
           <div className="flex items-center gap-2">
-            <Store className="w-4 h-4 text-[#A91314]" />
-            <span>Switch to: <strong>{newOutlet.name}</strong></span>
+            <Store className="w-4 h-4 text-[#A91314] stroke-[2.5]" />
+            <span>Switch to: <strong className="text-[#17130F]">{newOutlet.name}</strong></span>
           </div>
-          <div className="text-gray-500 pl-6">
+          <div className="text-gray-600 pl-6">
             Adding: <strong>{newItem.name}</strong> (₹{Number(newItem.price).toFixed(2)})
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-2.5">
+        <div className="flex flex-col sm:flex-row gap-3">
           <button
             onClick={confirmSwitchOutlet}
-            className="flex-1 py-2.5 px-4 rounded-xl bg-[#A91314] hover:bg-[#850003] text-white font-bold text-sm shadow transition-colors flex items-center justify-center gap-1.5"
+            className="flex-1 py-3 px-4 rounded-xl bg-[#A91314] hover:bg-[#850003] text-white font-black text-xs sm:text-sm border-2 border-[#17130F] shadow-[3px_3px_0px_#17130F] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center justify-center gap-1.5"
           >
             <span>Clear & Add New</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 stroke-[3]" />
           </button>
           <button
             onClick={cancelSwitchOutlet}
-            className="py-2.5 px-4 rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-50 font-semibold text-sm transition-colors"
+            className="py-3 px-4 rounded-xl border-2 border-[#17130F] text-[#17130F] hover:bg-gray-50 font-black text-xs sm:text-sm transition-all shadow-[2px_2px_0px_#17130F] active:translate-x-0.5 active:translate-y-0.5"
           >
             Keep Existing Cart
           </button>

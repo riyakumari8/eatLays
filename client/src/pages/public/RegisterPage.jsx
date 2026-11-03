@@ -9,8 +9,7 @@ import {
   ArrowRight, 
   AlertCircle, 
   Loader2, 
-  CheckCircle2,
-  ShieldCheck
+  ShieldCheck 
 } from 'lucide-react';
 
 export default function RegisterPage() {
@@ -52,97 +51,97 @@ export default function RegisterPage() {
   return (
     <div className="min-h-[80vh] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center space-y-2">
-        <div className="w-12 h-12 rounded-2xl bg-[#590004] text-[#FFB607] flex items-center justify-center mx-auto shadow-md">
-          <UtensilsCrossed className="w-7 h-7 stroke-[2.5]" />
+        <div className="w-14 h-14 rounded-2xl bg-[#E5AD24] text-[#17130F] border-2 border-[#17130F] shadow-[3px_3px_0px_#17130F] flex items-center justify-center mx-auto">
+          <UtensilsCrossed className="w-8 h-8 stroke-[2.5]" />
         </div>
-        <h2 className="font-display text-3xl font-black text-[#250001]">
+        <h2 className="font-display text-3xl sm:text-4xl font-black text-[#17130F]">
           Join eatLays
         </h2>
-        <p className="text-xs sm:text-sm text-gray-500">
+        <p className="text-xs sm:text-sm text-gray-600 font-semibold">
           Create a student account to pre-order food between lectures
         </p>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-6 shadow-xl rounded-3xl border border-gray-200 sm:px-10 space-y-6">
+        <div className="bg-white py-8 px-6 shadow-[6px_6px_0px_#17130F] rounded-3xl border-2 border-[#17130F] sm:px-10 space-y-6">
           
-          <div className="bg-[#FCECCB]/50 p-3 rounded-xl border border-[#ebd8b1] flex items-center gap-2 text-xs text-gray-700">
-            <ShieldCheck className="w-4 h-4 text-[#A91314] shrink-0" />
+          <div className="bg-[#FCECCB] p-3.5 rounded-2xl border-2 border-[#17130F] flex items-center gap-2.5 text-xs text-gray-800 font-bold">
+            <ShieldCheck className="w-4 h-4 text-[#A91314] shrink-0 stroke-[2.5]" />
             <span>Public registration creates standard <strong>Campus Student</strong> accounts.</span>
           </div>
 
           {errorMsg && (
-            <div className="p-3 bg-rose-50 border-l-4 border-rose-500 rounded-r-xl flex items-center gap-2 text-xs text-rose-800 font-semibold">
-              <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
+            <div className="p-3.5 bg-rose-50 border-2 border-rose-500 rounded-xl flex items-center gap-2 text-xs text-rose-800 font-bold">
+              <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 stroke-[2.5]" />
               <span>{errorMsg}</span>
             </div>
           )}
 
           <form onSubmit={handleRegister} className="space-y-4">
             <div>
-              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-black text-[#17130F] uppercase tracking-wider mb-1.5">
                 Full Name
               </label>
               <div className="relative">
-                <User className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <User className="w-4 h-4 text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Alex Rivera"
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#FFB607] focus:ring-2 focus:ring-[#FFB607]/20 text-sm"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border-2 border-[#17130F] focus:outline-none focus:bg-[#FCECCB]/30 text-sm font-semibold"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-black text-[#17130F] uppercase tracking-wider mb-1.5">
                 Campus Email Address
               </label>
               <div className="relative">
-                <Mail className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Mail className="w-4 h-4 text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@campus.edu"
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#FFB607] focus:ring-2 focus:ring-[#FFB607]/20 text-sm"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border-2 border-[#17130F] focus:outline-none focus:bg-[#FCECCB]/30 text-sm font-semibold"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-black text-[#17130F] uppercase tracking-wider mb-1.5">
                 Password (min 6 characters)
               </label>
               <div className="relative">
-                <Lock className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Lock className="w-4 h-4 text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#FFB607] focus:ring-2 focus:ring-[#FFB607]/20 text-sm"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border-2 border-[#17130F] focus:outline-none focus:bg-[#FCECCB]/30 text-sm font-semibold"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-black text-[#17130F] uppercase tracking-wider mb-1.5">
                 Confirm Password
               </label>
               <div className="relative">
-                <Lock className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Lock className="w-4 h-4 text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="password"
                   required
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#FFB607] focus:ring-2 focus:ring-[#FFB607]/20 text-sm"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border-2 border-[#17130F] focus:outline-none focus:bg-[#FCECCB]/30 text-sm font-semibold"
                 />
               </div>
             </div>
@@ -150,26 +149,26 @@ export default function RegisterPage() {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full py-3.5 bg-[#FFB607] hover:bg-[#ffc634] text-[#250001] font-display text-sm tracking-wide rounded-xl shadow-md transition-transform active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2 mt-2"
+              className="w-full py-3.5 bg-[#E5AD24] hover:bg-[#d69f1b] text-[#17130F] font-black text-sm rounded-xl border-2 border-[#17130F] shadow-[3.5px_3.5px_0px_#17130F] hover:shadow-[1px_1px_0px_#17130F] active:translate-x-0.5 active:translate-y-0.5 transition-all disabled:opacity-50 flex items-center justify-center gap-2 mt-2"
             >
               {submitting ? (
                 <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
+                  <Loader2 className="w-4 h-4 animate-spin stroke-[2.5]" />
                   <span>Creating Account...</span>
                 </>
               ) : (
                 <>
                   <span>Complete Student Registration</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 stroke-[3]" />
                 </>
               )}
             </button>
           </form>
 
-          <div className="pt-4 border-t border-gray-100 text-center">
-            <p className="text-xs text-gray-500">
+          <div className="pt-4 border-t-2 border-gray-100 text-center">
+            <p className="text-xs text-gray-600 font-semibold">
               Already have an account?{' '}
-              <Link to="/login" className="font-bold text-[#A91314] hover:underline">
+              <Link to="/login" className="font-black text-[#A91314] hover:underline">
                 Sign in
               </Link>
             </p>

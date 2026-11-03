@@ -13,7 +13,8 @@ import {
   ChefHat, 
   Check, 
   XCircle,
-  BellRing
+  BellRing,
+  Ticket
 } from 'lucide-react';
 
 const STEPS = [
@@ -61,8 +62,10 @@ export default function OrderTrackingPage() {
   if (loading) {
     return (
       <div className="max-w-3xl mx-auto px-4 py-20 text-center">
-        <RefreshCw className="w-10 h-10 animate-spin text-[#A91314] mx-auto mb-4" />
-        <p className="font-semibold text-gray-700">Connecting to campus kitchen queue...</p>
+        <div className="w-16 h-16 rounded-3xl bg-[#FCECCB] text-[#590004] border-2 border-[#17130F] flex items-center justify-center mx-auto mb-4 shadow-[3px_3px_0px_#17130F]">
+          <RefreshCw className="w-8 h-8 animate-spin text-[#A91314]" />
+        </div>
+        <p className="font-display font-black text-[#17130F]">Connecting to campus kitchen queue...</p>
       </div>
     );
   }
@@ -70,16 +73,20 @@ export default function OrderTrackingPage() {
   if (error || !order) {
     return (
       <div className="max-w-xl mx-auto px-4 py-20 text-center">
-        <AlertCircle className="w-12 h-12 text-rose-500 mx-auto mb-3" />
-        <h2 className="font-display text-2xl text-[#250001] mb-2">Order Not Accessible</h2>
-        <p className="text-gray-600 text-sm mb-6">{error || 'This order does not exist or you do not have permission to view it.'}</p>
-        <Link
-          to="/my-orders"
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#A91314] text-white font-bold rounded-xl text-sm"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span>Go to My Orders</span>
-        </Link>
+        <div className="bg-white rounded-3xl p-8 border-2 border-[#17130F] shadow-[6px_6px_0px_#17130F] space-y-4">
+          <div className="w-16 h-16 rounded-2xl bg-[#FCECCB] text-[#A91314] border-2 border-[#17130F] flex items-center justify-center mx-auto shadow-[2px_2px_0px_#17130F]">
+            <AlertCircle className="w-8 h-8 stroke-[2.5]" />
+          </div>
+          <h2 className="font-display text-2xl font-black text-[#17130F]">Order Not Accessible</h2>
+          <p className="text-gray-600 text-sm">{error || 'This order does not exist or you do not have permission to view it.'}</p>
+          <Link
+            to="/my-orders"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#E5AD24] text-[#17130F] font-black rounded-xl text-sm border-2 border-[#17130F] shadow-[3px_3px_0px_#17130F]"
+          >
+            <ArrowLeft className="w-4 h-4 stroke-[3]" />
+            <span>Go to My Orders</span>
+          </Link>
+        </div>
       </div>
     );
   }
@@ -96,67 +103,75 @@ export default function OrderTrackingPage() {
         <div>
           <Link
             to="/my-orders"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-500 hover:text-[#A91314] transition-colors mb-2"
+            className="inline-flex items-center gap-1.5 text-xs font-black text-[#17130F] hover:text-[#A91314] transition-colors mb-2 bg-white px-3 py-1.5 rounded-xl border-2 border-[#17130F] shadow-[2px_2px_0px_#17130F]"
           >
-            <ArrowLeft className="w-3.5 h-3.5" />
+            <ArrowLeft className="w-3.5 h-3.5 stroke-[3]" />
             <span>All My Orders</span>
           </Link>
-          <h1 className="font-display text-3xl font-black text-[#250001] flex items-center gap-2.5">
+          <h1 className="font-display text-3xl sm:text-4xl font-black text-[#17130F] flex items-center gap-2.5 mt-2">
             <span>Order #{order.orderNumber}</span>
           </h1>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-gray-500 font-semibold mt-1">
             Placed on {new Date(order.placedAt || order.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
           </p>
         </div>
 
         <button
           onClick={() => fetchOrder(false)}
-          className="self-start sm:self-center px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold rounded-xl flex items-center gap-1.5 transition-colors"
+          className="self-start sm:self-center px-3.5 py-2 bg-white hover:bg-gray-50 text-[#17130F] text-xs font-black rounded-xl border-2 border-[#17130F] shadow-[2.5px_2.5px_0px_#17130F] flex items-center gap-1.5 active:translate-x-0.5 active:translate-y-0.5 transition-all"
           title="Refresh current status"
         >
-          <RefreshCw className="w-3.5 h-3.5" />
+          <RefreshCw className="w-3.5 h-3.5 stroke-[2.5]" />
           <span>Live Refreshed</span>
         </button>
       </div>
 
       {/* Prominent Pickup PIN Callout */}
       {!isCancelled && (
-        <div className={`p-6 rounded-3xl border-2 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6 ${
+        <div className={`p-6 sm:p-8 rounded-3xl border-2 border-[#17130F] shadow-[6px_6px_0px_#17130F] flex flex-col sm:flex-row items-center justify-between gap-6 ${
           order.status === 'READY' 
-            ? 'bg-emerald-500 text-white border-emerald-400 animate-bounceOnce' 
-            : 'bg-[#590004] text-white border-[#FFB607]'
+            ? 'bg-emerald-400 text-[#17130F]' 
+            : 'bg-[#590004] text-white'
         }`}>
-          <div className="space-y-1 text-center sm:text-left">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-xs font-bold uppercase tracking-wider">
+          <div className="space-y-2 text-center sm:text-left">
+            <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider border-2 border-[#17130F] shadow-[2px_2px_0px_#17130F] ${
+              order.status === 'READY'
+                ? 'bg-white text-[#17130F]'
+                : 'bg-[#E5AD24] text-[#17130F]'
+            }`}>
               {order.status === 'READY' ? (
                 <>
-                  <BellRing className="w-3.5 h-3.5" />
+                  <BellRing className="w-3.5 h-3.5 stroke-[2.5]" />
                   <span>Order is Ready for Collection!</span>
                 </>
               ) : (
                 <>
-                  <Clock className="w-3.5 h-3.5 text-[#FFB607]" />
+                  <Clock className="w-3.5 h-3.5 stroke-[2.5]" />
                   <span>Preparation in Progress</span>
                 </>
               )}
             </div>
-            <h3 className="font-display text-2xl font-black">
+
+            <h3 className="font-display text-2xl sm:text-3xl font-black">
               Collect at {order.outlet?.name}
             </h3>
-            <p className="text-xs text-white/80 flex items-center justify-center sm:justify-start gap-1">
-              <MapPin className="w-3.5 h-3.5 text-[#FFB607]" />
+
+            <p className={`text-xs flex items-center justify-center sm:justify-start gap-1 font-bold ${
+              order.status === 'READY' ? 'text-gray-800' : 'text-[#FCECCB]'
+            }`}>
+              <MapPin className="w-3.5 h-3.5 stroke-[2.5]" />
               <span>{order.outlet?.location}</span>
             </p>
           </div>
 
-          <div className="bg-[#FFFDF9] text-[#250001] px-6 py-4 rounded-2xl text-center shadow-md border-2 border-[#FFB607] shrink-0">
+          <div className="bg-white text-[#17130F] px-7 py-5 rounded-3xl text-center shadow-[4px_4px_0px_#17130F] border-2 border-[#17130F] shrink-0">
             <span className="block text-[10px] uppercase font-black tracking-widest text-[#A91314]">
               Pickup Token Code
             </span>
-            <span className="font-mono text-3xl sm:text-4xl font-black tracking-widest text-[#250001]">
+            <span className="font-mono text-4xl sm:text-5xl font-black tracking-widest text-[#17130F] my-1 block">
               {order.pickupCode}
             </span>
-            <span className="block text-[10px] text-gray-500 font-bold mt-0.5">
+            <span className="inline-block px-2.5 py-0.5 rounded-md bg-[#FCECCB] text-[10px] font-black text-[#590004] border border-[#17130F]">
               Show to counter staff
             </span>
           </div>
@@ -165,11 +180,11 @@ export default function OrderTrackingPage() {
 
       {/* Cancelled Banner */}
       {isCancelled && (
-        <div className="bg-rose-50 border-2 border-rose-400 p-6 rounded-3xl flex items-center gap-4 text-rose-900">
-          <XCircle className="w-10 h-10 text-rose-600 shrink-0" />
+        <div className="bg-rose-100 border-2 border-[#17130F] shadow-[4px_4px_0px_#17130F] p-6 rounded-3xl flex items-center gap-4 text-rose-950">
+          <XCircle className="w-10 h-10 text-rose-700 shrink-0 stroke-[2.5]" />
           <div>
-            <h3 className="font-bold text-base">This Order Was Cancelled</h3>
-            <p className="text-xs text-rose-700 mt-1">
+            <h3 className="font-display text-lg font-black">This Order Was Cancelled</h3>
+            <p className="text-xs text-rose-800 mt-1 font-medium">
               The canteen was unable to fulfill this order. Any issues can be addressed directly at the counter.
             </p>
           </div>
@@ -178,12 +193,17 @@ export default function OrderTrackingPage() {
 
       {/* Progress Timeline */}
       {!isCancelled && (
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-6">
-          <h3 className="font-display text-lg font-black text-[#250001]">
-            Kitchen Preparation Status
-          </h3>
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-[#17130F] shadow-[5px_5px_0px_#17130F] space-y-6">
+          <div className="flex items-center justify-between pb-3 border-b-2 border-gray-100">
+            <h3 className="font-display text-lg font-black text-[#17130F]">
+              Kitchen Preparation Status
+            </h3>
+            <span className="text-xs font-bold text-gray-500">
+              Live updates active
+            </span>
+          </div>
 
-          <div className="relative pl-6 sm:pl-8 space-y-8 before:absolute before:left-3 sm:before:left-4 before:top-2 before:bottom-2 before:w-0.5 before:bg-gray-200">
+          <div className="relative pl-6 sm:pl-8 space-y-8 before:absolute before:left-3 sm:before:left-4 before:top-3 before:bottom-3 before:w-1 before:bg-gray-200">
             {STEPS.map((step, index) => {
               const isPast = currentStepIndex > index;
               const isCurrent = currentStepIndex === index;
@@ -193,41 +213,41 @@ export default function OrderTrackingPage() {
                 <div key={step.key} className="relative flex items-start gap-4">
                   {/* Step Icon Indicator */}
                   <div
-                    className={`absolute -left-6 sm:-left-8 w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs transition-colors ${
+                    className={`absolute -left-6 sm:-left-8 w-7 h-7 sm:w-9 sm:h-9 rounded-full flex items-center justify-center font-black text-xs transition-all border-2 border-[#17130F] ${
                       isPast
-                        ? 'bg-emerald-600 text-white'
+                        ? 'bg-emerald-400 text-[#17130F] shadow-[2px_2px_0px_#17130F]'
                         : isCurrent
-                        ? 'bg-[#FFB607] text-[#250001] ring-4 ring-[#FFB607]/30'
-                        : 'bg-gray-200 text-gray-400'
+                        ? 'bg-[#E5AD24] text-[#17130F] shadow-[3px_3px_0px_#17130F] scale-110'
+                        : 'bg-gray-100 text-gray-400'
                     }`}
                   >
                     {isPast ? (
-                      <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[3]" />
+                      <Check className="w-4 h-4 stroke-[3]" />
                     ) : (
                       <span>{index + 1}</span>
                     )}
                   </div>
 
-                  <div className="flex-1">
+                  <div className="flex-1 pl-2">
                     <div className="flex items-center justify-between">
                       <h4
-                        className={`text-sm font-bold ${
+                        className={`text-sm font-black ${
                           isCurrent
-                            ? 'text-[#A91314] font-black'
+                            ? 'text-[#A91314] text-base'
                             : isPast
-                            ? 'text-gray-900'
+                            ? 'text-[#17130F]'
                             : 'text-gray-400'
                         }`}
                       >
                         {step.label}
                       </h4>
                       {isCurrent && (
-                        <span className="px-2 py-0.5 rounded-md bg-[#FFB607]/20 text-[#590004] text-[10px] font-black uppercase tracking-wider animate-pulse">
+                        <span className="px-2.5 py-0.5 rounded-full bg-[#E5AD24] text-[#17130F] text-[10px] font-black uppercase tracking-wider border border-[#17130F] shadow-[1.5px_1.5px_0px_#17130F] animate-pulse">
                           Active Now
                         </span>
                       )}
                     </div>
-                    <p className="text-xs text-gray-500 mt-0.5">{step.desc}</p>
+                    <p className="text-xs text-gray-600 font-medium mt-0.5">{step.desc}</p>
                   </div>
                 </div>
               );
@@ -237,23 +257,23 @@ export default function OrderTrackingPage() {
       )}
 
       {/* Order Item Snapshot Summary */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-4">
-        <h3 className="font-display text-lg font-black text-[#250001] pb-3 border-b border-gray-100">
+      <div className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-[#17130F] shadow-[5px_5px_0px_#17130F] space-y-4">
+        <h3 className="font-display text-lg font-black text-[#17130F] pb-3 border-b-2 border-gray-100">
           Ordered Food Items
         </h3>
 
-        <div className="divide-y divide-gray-100">
+        <div className="divide-y-2 divide-gray-100">
           {order.items?.map((item) => (
             <div key={item.id} className="py-3 flex items-center justify-between text-xs sm:text-sm">
               <div className="flex items-center gap-2.5">
-                <span className="w-6 h-6 rounded-lg bg-[#FCECCB] text-[#590004] font-bold flex items-center justify-center text-xs">
+                <span className="w-6 h-6 rounded-lg bg-[#590004] text-[#E5AD24] font-black flex items-center justify-center text-xs border border-[#17130F]">
                   {item.quantity}×
                 </span>
-                <span className="font-bold text-gray-800">
+                <span className="font-black text-[#17130F]">
                   {item.itemNameSnapshot}
                 </span>
               </div>
-              <span className="font-mono font-bold text-gray-900">
+              <span className="font-mono font-black text-[#17130F]">
                 ₹{Number(item.lineTotal).toFixed(2)}
               </span>
             </div>
@@ -261,13 +281,13 @@ export default function OrderTrackingPage() {
         </div>
 
         {order.specialInstructions && (
-          <div className="p-3 bg-gray-50 rounded-xl text-xs text-gray-600 border border-gray-100">
-            <strong>Your Kitchen Note:</strong> {order.specialInstructions}
+          <div className="p-3 bg-[#FCECCB] rounded-xl text-xs text-gray-800 border-2 border-[#17130F] font-medium">
+            <strong className="font-black text-[#590004]">Your Kitchen Note:</strong> {order.specialInstructions}
           </div>
         )}
 
-        <div className="pt-4 border-t border-gray-200 flex justify-between items-baseline">
-          <span className="font-bold text-gray-700">Total Paid / Payable at Counter</span>
+        <div className="pt-4 border-t-2 border-[#17130F] flex justify-between items-baseline">
+          <span className="font-black text-[#17130F]">Total Paid / Payable at Counter</span>
           <span className="font-display text-2xl font-black text-[#A91314]">
             ₹{Number(order.total).toFixed(2)}
           </span>

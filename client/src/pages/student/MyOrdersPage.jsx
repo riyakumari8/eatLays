@@ -13,12 +13,12 @@ import {
 } from 'lucide-react';
 
 const STATUS_BADGES = {
-  PLACED: { bg: 'bg-blue-100 text-blue-800 border-blue-200', label: 'Placed' },
-  ACCEPTED: { bg: 'bg-amber-100 text-amber-800 border-amber-200', label: 'Accepted' },
-  PREPARING: { bg: 'bg-[#FFB607]/20 text-[#590004] border-[#FFB607]', label: 'Cooking' },
-  READY: { bg: 'bg-emerald-100 text-emerald-800 border-emerald-300 font-black animate-pulse', label: 'Ready for Pickup' },
-  COMPLETED: { bg: 'bg-gray-100 text-gray-700 border-gray-200', label: 'Collected' },
-  CANCELLED: { bg: 'bg-rose-100 text-rose-800 border-rose-200', label: 'Cancelled' },
+  PLACED: { bg: 'bg-blue-300 text-[#17130F]', label: 'Placed' },
+  ACCEPTED: { bg: 'bg-amber-300 text-[#17130F]', label: 'Accepted' },
+  PREPARING: { bg: 'bg-[#E5AD24] text-[#17130F]', label: 'Cooking' },
+  READY: { bg: 'bg-emerald-300 text-[#17130F] animate-pulse', label: 'Ready for Pickup' },
+  COMPLETED: { bg: 'bg-gray-200 text-gray-700', label: 'Collected' },
+  CANCELLED: { bg: 'bg-rose-300 text-[#17130F]', label: 'Cancelled' },
 };
 
 export default function MyOrdersPage() {
@@ -60,36 +60,36 @@ export default function MyOrdersPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="font-display text-3xl font-black text-[#250001]">
+          <h1 className="font-display text-3xl sm:text-4xl font-black text-[#17130F]">
             My Pre-Orders
           </h1>
-          <p className="text-xs sm:text-sm text-gray-500 mt-1">
+          <p className="text-xs sm:text-sm text-gray-600 font-medium mt-1">
             Track live kitchen queues and view your past counter pickups
           </p>
         </div>
 
         <button
           onClick={fetchOrders}
-          className="self-start sm:self-center px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold rounded-xl flex items-center gap-1.5 transition-colors"
+          className="self-start sm:self-center px-4 py-2 bg-white hover:bg-gray-50 text-[#17130F] text-xs font-black rounded-xl border-2 border-[#17130F] shadow-[2.5px_2.5px_0px_#17130F] flex items-center gap-1.5 active:translate-x-0.5 active:translate-y-0.5 transition-all"
         >
-          <RefreshCw className="w-3.5 h-3.5" />
+          <RefreshCw className="w-3.5 h-3.5 stroke-[2.5]" />
           <span>Refresh</span>
         </button>
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center gap-3 border-b border-gray-200 pb-2">
+      <div className="flex items-center gap-3 border-b-2 border-gray-200 pb-3">
         <button
           onClick={() => setActiveTab('ACTIVE')}
-          className={`font-bold text-sm pb-2 border-b-2 transition-all flex items-center gap-2 ${
+          className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center gap-2 border-2 ${
             activeTab === 'ACTIVE'
-              ? 'border-[#A91314] text-[#A91314]'
-              : 'border-transparent text-gray-500 hover:text-gray-800'
+              ? 'bg-[#E5AD24] text-[#17130F] border-[#17130F] shadow-[3px_3px_0px_#17130F]'
+              : 'bg-white text-gray-600 border-gray-300 hover:border-[#17130F]'
           }`}
         >
           <span>Active Orders</span>
           {activeOrders.length > 0 && (
-            <span className="w-5 h-5 rounded-full bg-[#FFB607] text-[#250001] font-black text-[11px] flex items-center justify-center">
+            <span className="w-5 h-5 rounded-full bg-[#590004] text-[#E5AD24] font-black text-[11px] flex items-center justify-center border border-[#17130F]">
               {activeOrders.length}
             </span>
           )}
@@ -97,10 +97,10 @@ export default function MyOrdersPage() {
 
         <button
           onClick={() => setActiveTab('HISTORY')}
-          className={`font-bold text-sm pb-2 border-b-2 transition-all flex items-center gap-2 ${
+          className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center gap-2 border-2 ${
             activeTab === 'HISTORY'
-              ? 'border-[#A91314] text-[#A91314]'
-              : 'border-transparent text-gray-500 hover:text-gray-800'
+              ? 'bg-[#E5AD24] text-[#17130F] border-[#17130F] shadow-[3px_3px_0px_#17130F]'
+              : 'bg-white text-gray-600 border-gray-300 hover:border-[#17130F]'
           }`}
         >
           <span>Order History ({pastOrders.length})</span>
@@ -111,66 +111,68 @@ export default function MyOrdersPage() {
       {loading ? (
         <div className="space-y-4">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="h-32 bg-gray-100 rounded-2xl animate-pulse" />
+            <div key={i} className="h-36 bg-gray-100 rounded-3xl animate-pulse border-2 border-gray-200" />
           ))}
         </div>
       ) : displayedOrders.length === 0 ? (
-        <div className="text-center py-16 bg-white rounded-3xl border border-gray-200 p-8">
-          <ShoppingBag className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-          <h3 className="font-bold text-lg text-gray-800 mb-1">
+        <div className="text-center py-16 bg-white rounded-3xl border-2 border-[#17130F] shadow-[5px_5px_0px_#17130F] p-8 max-w-lg mx-auto">
+          <div className="w-16 h-16 rounded-3xl bg-[#FCECCB] text-[#590004] border-2 border-[#17130F] flex items-center justify-center mx-auto mb-4 shadow-[3px_3px_0px_#17130F]">
+            <ShoppingBag className="w-8 h-8 stroke-[2.5]" />
+          </div>
+          <h3 className="font-display text-xl font-black text-[#17130F] mb-1">
             {activeTab === 'ACTIVE' ? 'No active orders in progress' : 'No past orders yet'}
           </h3>
-          <p className="text-xs sm:text-sm text-gray-500 max-w-sm mx-auto mb-6">
+          <p className="text-xs sm:text-sm text-gray-600 max-w-sm mx-auto mb-6 font-medium">
             {activeTab === 'ACTIVE'
               ? 'Browse campus canteens to order delicious food ahead of your break.'
               : 'Your completed or collected food orders will appear here.'}
           </p>
           <Link
             to="/outlets"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FFB607] hover:bg-[#ffc634] text-[#250001] font-bold text-xs rounded-xl shadow-xs"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#E5AD24] text-[#17130F] font-black text-xs rounded-xl border-2 border-[#17130F] shadow-[3px_3px_0px_#17130F] hover:shadow-[1px_1px_0px_#17130F] active:translate-x-0.5 active:translate-y-0.5 transition-all"
           >
             <span>Explore Campus Menus</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 stroke-[3]" />
           </Link>
         </div>
       ) : (
         <div className="space-y-4">
           {displayedOrders.map((order) => {
             const badge = STATUS_BADGES[order.status] || {
-              bg: 'bg-gray-100 text-gray-800 border-gray-200',
+              bg: 'bg-gray-200 text-gray-800',
               label: order.status,
             };
 
             return (
               <div
                 key={order.id}
-                className="bg-white rounded-3xl p-5 sm:p-6 border border-gray-200 shadow-sm hover:border-[#FFB607] hover:shadow-md transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-5"
+                className="bg-white rounded-3xl p-5 sm:p-6 border-2 border-[#17130F] shadow-[4px_4px_0px_#17130F] hover:shadow-[7px_7px_0px_#17130F] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-5"
               >
                 <div className="space-y-2 flex-1">
                   <div className="flex items-center gap-2.5 flex-wrap">
-                    <span className="font-mono font-bold text-xs text-gray-400">
+                    <span className="font-mono font-black text-xs text-gray-500">
                       #{order.orderNumber}
                     </span>
-                    <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold border ${badge.bg}`}>
+                    <span className={`px-3 py-0.5 rounded-full text-[11px] font-black border-2 border-[#17130F] shadow-[1.5px_1.5px_0px_#17130F] ${badge.bg}`}>
                       {badge.label}
                     </span>
-                    <span className="text-[11px] text-gray-400">
+                    <span className="text-[11px] text-gray-500 font-bold">
                       {new Date(order.createdAt).toLocaleDateString()} at{' '}
                       {new Date(order.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </span>
                   </div>
 
-                  <h3 className="font-display text-lg font-black text-[#250001]">
+                  <h3 className="font-display text-xl font-black text-[#17130F]">
                     {order.outlet?.name}
                   </h3>
 
-                  <div className="text-xs text-gray-500 flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5 text-[#A91314] shrink-0" />
+                  <div className="text-xs text-gray-600 flex items-center gap-1 font-bold">
+                    <MapPin className="w-3.5 h-3.5 text-[#A91314] shrink-0 stroke-[2.5]" />
                     <span>{order.outlet?.location}</span>
                   </div>
 
                   {/* Items snapshot summary */}
-                  <div className="text-xs text-gray-700 font-medium">
+                  <div className="text-xs text-gray-700 font-semibold pt-1">
                     {order.items?.map((item, idx) => (
                       <span key={item.id}>
                         {item.quantity}× {item.itemNameSnapshot}
@@ -180,9 +182,9 @@ export default function MyOrdersPage() {
                   </div>
                 </div>
 
-                <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center border-t sm:border-t-0 pt-3 sm:pt-0 border-gray-100 gap-3">
+                <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center border-t-2 sm:border-t-0 pt-3 sm:pt-0 border-gray-100 gap-3">
                   <div className="text-left sm:text-right">
-                    <div className="text-[11px] text-gray-400 font-bold uppercase">
+                    <div className="text-[10px] text-gray-400 font-black uppercase tracking-wider">
                       Total
                     </div>
                     <div className="font-display text-xl font-black text-[#A91314]">
@@ -192,10 +194,10 @@ export default function MyOrdersPage() {
 
                   <Link
                     to={`/orders/${order.id}`}
-                    className="px-4 py-2 bg-[#590004] hover:bg-[#850003] text-[#FFB607] font-bold text-xs rounded-xl shadow-xs transition-colors flex items-center gap-1.5"
+                    className="px-4 py-2.5 bg-[#E5AD24] hover:bg-[#d69f1b] text-[#17130F] font-black text-xs rounded-xl border-2 border-[#17130F] shadow-[3px_3px_0px_#17130F] hover:shadow-[1px_1px_0px_#17130F] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center gap-1.5"
                   >
                     <span>Track Status</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3.5 h-3.5 stroke-[3]" />
                   </Link>
                 </div>
               </div>

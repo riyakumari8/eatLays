@@ -1,83 +1,163 @@
 @import "tailwindcss";
 
 @theme {
-  --color-rootbeer: #250001;
+  --color-mustard: #E5AD24;
+  --color-mustard-hover: #D49D18;
+  --color-mustard-light: #FBEFCD;
   --color-maroon: #590004;
-  --color-crimson: #a91314;
-  --color-fire: #ffb607;
-  --color-banana: #fceccb;
-  --color-lapis: #236092;
-
+  --color-maroon-dark: #3F0002;
+  --color-crimson: #A91314;
+  --color-crimson-hover: #8E0E0F;
+  --color-cream: #FCECCB;
+  --color-cream-light: #FFFDF7;
+  --color-rootbeer: #250001;
+  --color-ink: #17130F;
+  
   --font-display: "Paytone One", "Titan One", sans-serif;
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
 }
 
 :root {
-  --color-rootbeer: #250001;
+  --color-mustard: #E5AD24;
   --color-maroon: #590004;
-  --color-crimson: #a91314;
-  --color-fire: #ffb607;
-  --color-banana: #fceccb;
-  --color-lapis: #236092;
+  --color-crimson: #A91314;
+  --color-cream: #FCECCB;
+  --color-rootbeer: #250001;
+  --color-ink: #17130F;
 }
 
 body {
   font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-  color: #250001;
-  background-color: #fffdfa;
+  color: #17130F;
+  background-color: #FFFDF7;
+  -webkit-font-smoothing: antialiased;
 }
 
 .font-display {
   font-family: "Paytone One", "Titan One", sans-serif;
 }
 
-/* Signature chunky neo-pop cards inspired by eatLays visual reference */
-.box-chunky {
-  background-color: #ffffff;
-  border: 2px solid #250001;
-  border-radius: 28px;
-  box-shadow: 6px 6px 0px #250001;
-  transition: all 0.2s ease-in-out;
-}
-
-.box-chunky:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0px #250001;
-}
-
-.box-chunky-static {
-  background-color: #ffffff;
-  border: 2px solid #250001;
-  border-radius: 28px;
-  box-shadow: 6px 6px 0px #250001;
-}
-
-.box-chunky-sm {
-  background-color: #ffffff;
-  border: 2px solid #250001;
+/* Distinctive Retro-Comic Startup Components */
+.comic-box {
+  background-color: #FFFFFF;
+  border: 2px solid #17130F;
   border-radius: 20px;
-  box-shadow: 4px 4px 0px #250001;
-  transition: all 0.2s ease-in-out;
+  box-shadow: 4px 4px 0px #17130F;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.box-badge {
-  border: 2px solid #250001;
+.comic-box-interactive:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #17130F;
+}
+
+.comic-box-lg {
+  background-color: #FFFFFF;
+  border: 2.5px solid #17130F;
+  border-radius: 24px;
+  box-shadow: 5px 5px 0px #17130F;
+}
+
+.comic-badge {
+  border: 1.5px solid #17130F;
+  border-radius: 10px;
+  box-shadow: 2px 2px 0px #17130F;
+  font-weight: 800;
+}
+
+.comic-pill {
+  border: 1.5px solid #17130F;
+  border-radius: 9999px;
+  box-shadow: 2px 2px 0px #17130F;
+  font-weight: 800;
+}
+
+.comic-btn-mustard {
+  background-color: #E5AD24;
+  color: #17130F;
+  border: 2px solid #17130F;
   border-radius: 14px;
-  box-shadow: 2.5px 3px 0px #250001;
+  box-shadow: 3px 3px 0px #17130F;
+  font-weight: 800;
+  transition: all 0.15s ease;
 }
 
-/* Custom subtle scrollbar */
+.comic-btn-mustard:hover {
+  background-color: #D49D18;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #17130F;
+}
+
+.comic-btn-mustard:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #17130F;
+}
+
+.comic-btn-crimson {
+  background-color: #A91314;
+  color: #FFFFFF;
+  border: 2px solid #17130F;
+  border-radius: 14px;
+  box-shadow: 3px 3px 0px #17130F;
+  font-weight: 800;
+  transition: all 0.15s ease;
+}
+
+.comic-btn-crimson:hover {
+  background-color: #8E0E0F;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #17130F;
+}
+
+.comic-btn-crimson:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #17130F;
+}
+
+.comic-btn-white {
+  background-color: #FFFFFF;
+  color: #17130F;
+  border: 2px solid #17130F;
+  border-radius: 14px;
+  box-shadow: 3px 3px 0px #17130F;
+  font-weight: 800;
+  transition: all 0.15s ease;
+}
+
+.comic-btn-white:hover {
+  background-color: #FCECCB;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #17130F;
+}
+
+.comic-btn-white:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #17130F;
+}
+
+/* Subtle retro dot pattern for hero and feature backgrounds */
+.bg-halftone {
+  background-image: radial-gradient(#17130F 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.bg-halftone-subtle {
+  background-image: radial-gradient(rgba(23, 19, 15, 0.08) 1.2px, transparent 1.2px);
+  background-size: 14px 14px;
+}
+
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #fceccb33;
+  background: #FCECCB33;
 }
 ::-webkit-scrollbar-thumb {
-  background: #a9131444;
+  background: #A9131455;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #a9131488;
+  background: #A9131499;
 }
