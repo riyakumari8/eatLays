@@ -109,7 +109,7 @@ export default function AdminDashboardPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF7900] text-[#19130F] text-xs font-black uppercase tracking-wider mb-2 border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF7900] text-white text-xs font-black uppercase tracking-wider mb-2 border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]">
             <ShieldAlert className="w-3.5 h-3.5 stroke-[2.5]" />
             <span>Campus Dining Authority</span>
           </div>

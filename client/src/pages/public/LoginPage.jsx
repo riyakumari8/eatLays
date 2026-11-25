@@ -59,7 +59,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-[80vh] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center space-y-2">
-        <div className="w-14 h-14 rounded-2xl bg-[#FF7900] text-[#19130F] border-2 border-[#19130F] shadow-[3px_3px_0px_#19130F] flex items-center justify-center mx-auto">
+        <div className="w-14 h-14 rounded-2xl bg-[#FF7900] text-white border-2 border-[#19130F] shadow-[3px_3px_0px_#19130F] flex items-center justify-center mx-auto">
           <UtensilsCrossed className="w-8 h-8 stroke-[2.5]" />
         </div>
         <h2 className="font-display text-3xl sm:text-4xl font-black text-[#19130F]">
@@ -73,7 +73,7 @@ export default function LoginPage() {
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         
         {/* Quick Demo Credentials Box */}
-        <div className="mb-6 bg-[#FFF0B8] rounded-2xl p-4 border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F]">
+        <div className="mb-6 bg-white rounded-2xl p-4 border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F]">
           <div className="flex items-center gap-1.5 text-xs font-black text-[#19130F] mb-2.5">
             <Sparkles className="w-4 h-4 text-[#FF3D0A] stroke-[2.5]" />
             <span>Click to Autofill Demo Credentials:</span>
@@ -82,7 +82,7 @@ export default function LoginPage() {
             <button
               type="button"
               onClick={() => handleQuickDemo('student@campus.edu', 'Student123!')}
-              className="py-2 px-2 bg-white hover:bg-gray-50 border-2 border-[#19130F] rounded-xl text-[11px] font-black text-[#19130F] shadow-[2px_2px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 flex flex-col items-center gap-1 transition-all"
+              className="py-2 px-2 bg-orange-50/60 hover:bg-orange-100 border-2 border-[#19130F] rounded-xl text-[11px] font-black text-[#19130F] shadow-[2px_2px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 flex flex-col items-center gap-1 transition-all"
             >
               <GraduationCap className="w-4 h-4 text-[#FF3D0A] stroke-[2.5]" />
               <span>Student</span>
@@ -91,7 +91,7 @@ export default function LoginPage() {
             <button
               type="button"
               onClick={() => handleQuickDemo('vendor.central@campus.edu', 'Vendor123!')}
-              className="py-2 px-2 bg-white hover:bg-gray-50 border-2 border-[#19130F] rounded-xl text-[11px] font-black text-[#19130F] shadow-[2px_2px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 flex flex-col items-center gap-1 transition-all"
+              className="py-2 px-2 bg-orange-50/60 hover:bg-orange-100 border-2 border-[#19130F] rounded-xl text-[11px] font-black text-[#19130F] shadow-[2px_2px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 flex flex-col items-center gap-1 transition-all"
             >
               <Store className="w-4 h-4 text-[#FF7900] stroke-[2.5]" />
               <span>Vendor</span>
@@ -100,7 +100,7 @@ export default function LoginPage() {
             <button
               type="button"
               onClick={() => handleQuickDemo('admin@campus.edu', 'Admin123!')}
-              className="py-2 px-2 bg-white hover:bg-gray-50 border-2 border-[#19130F] rounded-xl text-[11px] font-black text-[#19130F] shadow-[2px_2px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 flex flex-col items-center gap-1 transition-all"
+              className="py-2 px-2 bg-orange-50/60 hover:bg-orange-100 border-2 border-[#19130F] rounded-xl text-[11px] font-black text-[#19130F] shadow-[2px_2px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 flex flex-col items-center gap-1 transition-all"
             >
               <ShieldCheck className="w-4 h-4 text-[#FF3D0A] stroke-[2.5]" />
               <span>Admin</span>
@@ -155,7 +155,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full py-3.5 bg-[#FF7900] hover:bg-[#E66D00] text-[#19130F] font-black text-sm rounded-xl border-2 border-[#19130F] shadow-[3.5px_3.5px_0px_#19130F] hover:shadow-[1px_1px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 transition-all disabled:opacity-50 flex items-center justify-center gap-2 mt-2"
+              className="w-full py-3.5 bg-[#FF7900] hover:bg-[#E66D00] text-white font-black text-sm rounded-xl border-2 border-[#19130F] shadow-[3.5px_3.5px_0px_#19130F] hover:shadow-[1px_1px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 transition-all disabled:opacity-50 flex items-center justify-center gap-2 mt-2"
             >
               {submitting ? (
                 <>

@@ -7,7 +7,7 @@
   --color-fiery: #FF3D0A;
   --color-fiery-hover: #E03508;
   --color-cream: #FFF0B8;
-  --color-cream-light: #FFFBF0;
+  --color-cream-light: #F8F9FA;
   --color-ink: #19130F;
   --color-maroon: #590004;
   --color-white: #FFFFFF;
@@ -28,7 +28,7 @@
 body {
   font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   color: #19130F;
-  background-color: #FFFBF0;
+  background-color: #F8F9FA;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -162,7 +162,7 @@ body {
 }
 
 .bg-halftone-subtle {
-  background-image: radial-gradient(rgba(25, 19, 15, 0.08) 1.2px, transparent 1.2px);
+  background-image: radial-gradient(rgba(25, 19, 15, 0.04) 1.2px, transparent 1.2px);
   background-size: 14px 14px;
 }
 

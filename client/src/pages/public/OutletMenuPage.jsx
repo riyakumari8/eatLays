@@ -105,14 +105,14 @@ export default function OutletMenuPage() {
       </div>
 
       {/* Outlet Banner Card */}
-      <div className="relative rounded-3xl overflow-hidden border-2 border-[#19130F] shadow-[6px_6px_0px_#19130F] bg-[#FF7900] text-[#19130F]">
+      <div className="relative rounded-3xl overflow-hidden border-2 border-[#19130F] shadow-[6px_6px_0px_#19130F] bg-white text-[#19130F]">
         <div className="absolute inset-0">
           <img
             src={outlet.imageUrl}
             alt={outlet.name}
-            className="w-full h-full object-cover opacity-15"
+            className="w-full h-full object-cover opacity-10"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#FF7900] via-[#FF7900]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent" />
         </div>
 
         <div className="relative z-10 p-6 sm:p-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -134,7 +134,7 @@ export default function OutletMenuPage() {
               </span>
             </div>
 
-            <h1 className="font-display text-3xl sm:text-5xl font-black text-[#19130F] drop-shadow-sm">
+            <h1 className="font-display text-3xl sm:text-5xl font-black text-[#19130F]">
               {outlet.name}
             </h1>
 
@@ -143,16 +143,16 @@ export default function OutletMenuPage() {
               <span>{outlet.location}</span>
             </p>
 
-            <p className="text-xs sm:text-sm text-[#19130F]/90 leading-relaxed font-bold">
+            <p className="text-xs sm:text-sm text-gray-700 leading-relaxed font-semibold">
               {outlet.description}
             </p>
           </div>
 
-          <div className="bg-[#19130F] p-4 rounded-2xl border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] text-center min-w-[170px]">
+          <div className="bg-[#F8F9FA] p-4 rounded-2xl border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] text-center min-w-[170px]">
             <div className="text-3xl font-black text-[#FF7900] font-display">
               {outlet.menuItems?.length || 0}
             </div>
-            <div className="text-[11px] text-[#FFF0B8] font-black uppercase tracking-wider mt-0.5">
+            <div className="text-[11px] text-gray-700 font-black uppercase tracking-wider mt-0.5">
               Dishes on Menu
             </div>
           </div>
@@ -314,16 +314,16 @@ export default function OutletMenuPage() {
       {/* Floating Bottom Cart Bar */}
       {itemCount > 0 && cartOutlet?.id === outlet.id && (
         <div className="fixed bottom-5 left-0 right-0 z-30 px-4 sm:px-6 max-w-3xl mx-auto">
-          <div className="bg-[#FF7900] text-[#19130F] rounded-3xl p-4 sm:p-5 shadow-[6px_6px_0px_#19130F] border-3 border-[#19130F] flex items-center justify-between gap-4">
+          <div className="bg-white text-[#19130F] rounded-3xl p-4 sm:p-5 shadow-[6px_6px_0px_#19130F] border-3 border-[#19130F] flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-2xl bg-[#FFF0B8] text-[#19130F] border-2 border-[#19130F] flex items-center justify-center font-black shadow-[2px_2px_0px_#19130F]">
+              <div className="w-11 h-11 rounded-2xl bg-[#FF7900] text-white border-2 border-[#19130F] flex items-center justify-center font-black shadow-[2px_2px_0px_#19130F]">
                 <ShoppingBag className="w-5 h-5 stroke-[2.5]" />
               </div>
               <div>
-                <div className="text-xs text-[#19130F] font-bold">
+                <div className="text-xs text-gray-600 font-bold">
                   {itemCount} {itemCount === 1 ? 'item' : 'items'} in pre-order cart
                 </div>
-                <div className="font-display text-xl sm:text-2xl font-black text-[#19130F]">
+                <div className="font-display text-xl sm:text-2xl font-black text-[#FF3D0A]">
                   ₹{subtotal.toFixed(2)}
                 </div>
               </div>
@@ -331,7 +331,7 @@ export default function OutletMenuPage() {
 
             <Link
               to="/cart"
-              className="px-5 py-3 bg-[#FF3D0A] hover:bg-[#E03508] text-white font-black text-xs sm:text-sm rounded-2xl border-2 border-[#19130F] shadow-[3px_3px_0px_#19130F] hover:shadow-[1px_1px_0px_#19130F] flex items-center gap-2 transition-all active:translate-x-0.5 active:translate-y-0.5 shrink-0"
+              className="px-5 py-3 bg-[#FF7900] hover:bg-[#E66D00] text-white font-black text-xs sm:text-sm rounded-2xl border-2 border-[#19130F] shadow-[3px_3px_0px_#19130F] hover:shadow-[1px_1px_0px_#19130F] flex items-center gap-2 transition-all active:translate-x-0.5 active:translate-y-0.5 shrink-0"
             >
               <span>View Cart & Checkout</span>
               <ArrowRight className="w-4 h-4 stroke-[3]" />

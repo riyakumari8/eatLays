@@ -115,17 +115,17 @@ export default function VendorDashboardPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       
       {/* Header Banner */}
-      <div className="bg-[#FF7900] text-[#19130F] rounded-3xl p-6 sm:p-8 border-2 border-[#19130F] shadow-[6px_6px_0px_#19130F] flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="bg-white text-[#19130F] rounded-3xl p-6 sm:p-8 border-2 border-[#19130F] shadow-[6px_6px_0px_#19130F] flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="px-3.5 py-1 rounded-full bg-[#FFF0B8] text-[#19130F] font-black text-xs uppercase tracking-wider border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]">
+            <span className="px-3.5 py-1 rounded-full bg-[#FF7900] text-white font-black text-xs uppercase tracking-wider border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]">
               Canteen Kitchen Terminal
             </span>
           </div>
           <h1 className="font-display text-3xl sm:text-4xl font-black text-[#19130F]">
             {outlet.name}
           </h1>
-          <p className="text-xs sm:text-sm text-[#19130F] flex items-center gap-1.5 font-bold">
+          <p className="text-xs sm:text-sm text-gray-600 flex items-center gap-1.5 font-bold">
             <MapPin className="w-4 h-4 text-[#FF3D0A] stroke-[2.5]" />
             <span>{outlet.location}</span>
           </p>

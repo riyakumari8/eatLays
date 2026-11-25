@@ -51,7 +51,7 @@ export default function RegisterPage() {
   return (
     <div className="min-h-[80vh] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center space-y-2">
-        <div className="w-14 h-14 rounded-2xl bg-[#FF7900] text-[#19130F] border-2 border-[#19130F] shadow-[3px_3px_0px_#19130F] flex items-center justify-center mx-auto">
+        <div className="w-14 h-14 rounded-2xl bg-[#FF7900] text-white border-2 border-[#19130F] shadow-[3px_3px_0px_#19130F] flex items-center justify-center mx-auto">
           <UtensilsCrossed className="w-8 h-8 stroke-[2.5]" />
         </div>
         <h2 className="font-display text-3xl sm:text-4xl font-black text-[#19130F]">
@@ -65,7 +65,7 @@ export default function RegisterPage() {
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-6 shadow-[6px_6px_0px_#19130F] rounded-3xl border-2 border-[#19130F] sm:px-10 space-y-6">
           
-          <div className="bg-[#FFF0B8] p-3.5 rounded-2xl border-2 border-[#19130F] flex items-center gap-2.5 text-xs text-gray-800 font-bold">
+          <div className="bg-orange-50/70 p-3.5 rounded-2xl border-2 border-[#19130F] flex items-center gap-2.5 text-xs text-gray-800 font-bold">
             <ShieldCheck className="w-4 h-4 text-[#FF3D0A] shrink-0 stroke-[2.5]" />
             <span>Public registration creates standard <strong>Campus Student</strong> accounts.</span>
           </div>
@@ -149,7 +149,7 @@ export default function RegisterPage() {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full py-3.5 bg-[#FF7900] hover:bg-[#E66D00] text-[#19130F] font-black text-sm rounded-xl border-2 border-[#19130F] shadow-[3.5px_3.5px_0px_#19130F] hover:shadow-[1px_1px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 transition-all disabled:opacity-50 flex items-center justify-center gap-2 mt-2"
+              className="w-full py-3.5 bg-[#FF7900] hover:bg-[#E66D00] text-white font-black text-sm rounded-xl border-2 border-[#19130F] shadow-[3.5px_3.5px_0px_#19130F] hover:shadow-[1px_1px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 transition-all disabled:opacity-50 flex items-center justify-center gap-2 mt-2"
             >
               {submitting ? (
                 <>

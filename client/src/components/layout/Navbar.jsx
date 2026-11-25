@@ -32,9 +32,9 @@ export default function Navbar() {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-40 bg-[#FF7900] text-[#19130F] border-b-2 border-[#19130F] shadow-[0_4px_0px_#19130F]">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md text-[#19130F] border-b-2 border-[#19130F] shadow-[0_3px_0px_#19130F]">
       {/* Top micro ticker */}
-      <div className="bg-[#FFF0B8] text-[#19130F] text-[11px] font-black uppercase tracking-widest py-1 px-4 text-center border-b-2 border-[#19130F] flex items-center justify-center gap-2">
+      <div className="bg-[#FFF9EE] text-[#19130F] text-[11px] font-black uppercase tracking-widest py-1 px-4 text-center border-b border-[#19130F]/15 flex items-center justify-center gap-2">
         <span className="inline-block w-2 h-2 rounded-full bg-[#FF3D0A] animate-pulse"></span>
         <span>Campus Food Pre-Ordering & Express Counter Pickup</span>
         <span className="hidden sm:inline text-[#19130F]/70">• Skip Canteen Lines Completely</span>
@@ -49,14 +49,14 @@ export default function Navbar() {
             className="flex items-center gap-2.5 group focus:outline-none"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <div className="w-10 h-10 rounded-xl bg-[#FFF0B8] flex items-center justify-center text-[#19130F] border-2 border-[#19130F] shadow-[2.5px_2.5px_0px_#19130F] group-hover:rotate-3 transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-[#FF7900] flex items-center justify-center text-white border-2 border-[#19130F] shadow-[2.5px_2.5px_0px_#19130F] group-hover:rotate-3 transition-transform">
               <UtensilsCrossed className="w-5 h-5 stroke-[2.5]" />
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-2xl font-black text-[#19130F] tracking-tight leading-none group-hover:text-white transition-colors">
+              <span className="font-display text-2xl font-black text-[#19130F] tracking-tight leading-none group-hover:text-[#FF7900] transition-colors">
                 eatLays
               </span>
-              <span className="text-[10px] uppercase font-black tracking-widest text-[#FFF0B8] mt-0.5 drop-shadow-[0_1px_1px_rgba(25,19,15,0.4)]">
+              <span className="text-[10px] uppercase font-black tracking-widest text-[#FF7900] mt-0.5">
                 Campus Pre-Order
               </span>
             </div>
@@ -68,8 +68,8 @@ export default function Navbar() {
               to="/outlets"
               className={`font-black text-xs sm:text-sm px-3.5 py-1.5 rounded-xl transition-all ${
                 isActive('/outlets')
-                  ? 'bg-[#FFF0B8] text-[#19130F] border-2 border-[#19130F] shadow-[2.5px_2.5px_0px_#19130F]'
-                  : 'text-[#19130F] hover:bg-[#FFF0B8]/50'
+                  ? 'bg-[#FF7900] text-white border-2 border-[#19130F] shadow-[2.5px_2.5px_0px_#19130F]'
+                  : 'text-[#19130F] hover:bg-orange-50 hover:text-[#FF7900]'
               }`}
             >
               Campus Canteens
@@ -77,7 +77,7 @@ export default function Navbar() {
 
             <Link
               to="/#how-it-works"
-              className="font-black text-xs sm:text-sm text-[#19130F] hover:bg-[#FFF0B8]/50 px-3.5 py-1.5 rounded-xl transition-colors"
+              className="font-black text-xs sm:text-sm text-[#19130F] hover:bg-orange-50 hover:text-[#FF7900] px-3.5 py-1.5 rounded-xl transition-colors"
             >
               How It Works
             </Link>
@@ -88,11 +88,11 @@ export default function Navbar() {
                 to="/my-orders"
                 className={`font-black text-xs sm:text-sm flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl transition-all ${
                   isActive('/my-orders')
-                    ? 'bg-[#FFF0B8] text-[#19130F] border-2 border-[#19130F] shadow-[2.5px_2.5px_0px_#19130F]'
-                    : 'text-[#19130F] hover:bg-[#FFF0B8]/50'
+                    ? 'bg-[#FF7900] text-white border-2 border-[#19130F] shadow-[2.5px_2.5px_0px_#19130F]'
+                    : 'text-[#19130F] hover:bg-orange-50 hover:text-[#FF7900]'
                 }`}
               >
-                <Clock className="w-4 h-4 text-[#19130F] shrink-0 stroke-[2.5]" />
+                <Clock className="w-4 h-4 shrink-0 stroke-[2.5]" />
                 <span>My Orders</span>
               </Link>
             )}
@@ -103,19 +103,19 @@ export default function Navbar() {
                   to="/vendor/dashboard"
                   className={`font-black text-xs sm:text-sm flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl transition-all ${
                     isActive('/vendor/dashboard')
-                      ? 'bg-[#FFF0B8] text-[#19130F] border-2 border-[#19130F] shadow-[2.5px_2.5px_0px_#19130F]'
-                      : 'text-[#19130F] hover:bg-[#FFF0B8]/50'
+                      ? 'bg-[#FF7900] text-white border-2 border-[#19130F] shadow-[2.5px_2.5px_0px_#19130F]'
+                      : 'text-[#19130F] hover:bg-orange-50 hover:text-[#FF7900]'
                   }`}
                 >
-                  <Store className="w-4 h-4 text-[#19130F] stroke-[2.5]" />
+                  <Store className="w-4 h-4 stroke-[2.5]" />
                   <span>Dashboard</span>
                 </Link>
                 <Link
                   to="/vendor/orders"
                   className={`font-black text-xs sm:text-sm px-3 py-1.5 rounded-xl transition-colors ${
                     isActive('/vendor/orders')
-                      ? 'bg-[#FFF0B8] text-[#19130F] border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]'
-                      : 'text-[#19130F] hover:bg-[#FFF0B8]/50'
+                      ? 'bg-[#FF7900] text-white border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]'
+                      : 'text-[#19130F] hover:bg-orange-50 hover:text-[#FF7900]'
                   }`}
                 >
                   Live Orders
@@ -124,8 +124,8 @@ export default function Navbar() {
                   to="/vendor/menu"
                   className={`font-black text-xs sm:text-sm px-3 py-1.5 rounded-xl transition-colors ${
                     isActive('/vendor/menu')
-                      ? 'bg-[#FFF0B8] text-[#19130F] border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]'
-                      : 'text-[#19130F] hover:bg-[#FFF0B8]/50'
+                      ? 'bg-[#FF7900] text-white border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]'
+                      : 'text-[#19130F] hover:bg-orange-50 hover:text-[#FF7900]'
                   }`}
                 >
                   Menu & Stock
@@ -138,11 +138,11 @@ export default function Navbar() {
                 to="/admin"
                 className={`font-black text-xs sm:text-sm flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl transition-all ${
                   isActive('/admin')
-                    ? 'bg-[#FFF0B8] text-[#19130F] border-2 border-[#19130F] shadow-[2.5px_2.5px_0px_#19130F]'
-                    : 'text-[#19130F] hover:bg-[#FFF0B8]/50'
+                    ? 'bg-[#FF7900] text-white border-2 border-[#19130F] shadow-[2.5px_2.5px_0px_#19130F]'
+                    : 'text-[#19130F] hover:bg-orange-50 hover:text-[#FF7900]'
                 }`}
               >
-                <ShieldAlert className="w-4 h-4 text-[#19130F] stroke-[2.5]" />
+                <ShieldAlert className="w-4 h-4 stroke-[2.5]" />
                 <span>Admin Console</span>
               </Link>
             )}
@@ -154,7 +154,7 @@ export default function Navbar() {
             {(!user || isStudent) && (
               <Link
                 to="/cart"
-                className="relative p-2.5 rounded-xl bg-[#FFF0B8] hover:bg-white border-2 border-[#19130F] text-[#19130F] transition-all shadow-[2.5px_2.5px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5"
+                className="relative p-2.5 rounded-xl bg-white hover:bg-orange-50 border-2 border-[#19130F] text-[#19130F] transition-all shadow-[2.5px_2.5px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5"
                 title="View Pre-Order Cart"
               >
                 <ShoppingBag className="w-5 h-5 stroke-[2.5]" />
@@ -168,7 +168,7 @@ export default function Navbar() {
 
             {isAuthenticated ? (
               <div className="flex items-center gap-3">
-                <div className="flex items-center gap-2 pl-3 border-l-2 border-[#19130F]/30">
+                <div className="flex items-center gap-2 pl-3 border-l-2 border-gray-200">
                   <div className="w-8 h-8 rounded-lg bg-[#FF3D0A] border-2 border-[#19130F] flex items-center justify-center text-white font-black text-xs uppercase shadow-[1.5px_1.5px_0px_#19130F]">
                     {user.name?.charAt(0) || 'U'}
                   </div>
@@ -176,7 +176,7 @@ export default function Navbar() {
                     <span className="text-xs font-black leading-tight truncate max-w-[110px] text-[#19130F]">
                       {user.name}
                     </span>
-                    <span className="text-[10px] text-[#19130F]/80 font-bold capitalize">
+                    <span className="text-[10px] text-gray-500 font-bold capitalize">
                       {user.role?.toLowerCase()}
                     </span>
                   </div>
@@ -184,7 +184,7 @@ export default function Navbar() {
 
                 <button
                   onClick={handleLogout}
-                  className="p-2 text-[#19130F] hover:bg-[#FFF0B8] rounded-xl border border-transparent hover:border-[#19130F] transition-all"
+                  className="p-2 text-[#19130F] hover:bg-orange-50 rounded-xl border border-transparent hover:border-[#19130F] transition-all"
                   title="Sign Out"
                 >
                   <LogOut className="w-4 h-4 stroke-[2.5]" />
@@ -194,13 +194,13 @@ export default function Navbar() {
               <div className="flex items-center gap-2.5">
                 <Link
                   to="/login"
-                  className="px-3.5 py-2 text-sm font-black text-[#19130F] hover:bg-[#FFF0B8]/50 rounded-xl transition-colors"
+                  className="px-3.5 py-2 text-sm font-black text-[#19130F] hover:bg-orange-50 hover:text-[#FF7900] rounded-xl transition-colors"
                 >
                   Sign In
                 </Link>
                 <Link
                   to="/outlets"
-                  className="px-4 py-2 bg-[#FF3D0A] hover:bg-[#E03508] text-white text-sm font-display tracking-wide rounded-xl border-2 border-[#19130F] shadow-[3px_3px_0px_#19130F] hover:shadow-[4px_4px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_#19130F] transition-all flex items-center gap-1.5"
+                  className="px-4 py-2 bg-[#FF7900] hover:bg-[#E66D00] text-white text-sm font-display tracking-wide rounded-xl border-2 border-[#19130F] shadow-[3px_3px_0px_#19130F] hover:shadow-[4px_4px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_#19130F] transition-all flex items-center gap-1.5"
                 >
                   <span>Order Ahead</span>
                   <ArrowRight className="w-3.5 h-3.5 stroke-[3]" />
@@ -214,7 +214,7 @@ export default function Navbar() {
             {(!user || isStudent) && (
               <Link
                 to="/cart"
-                className="relative p-2 rounded-xl bg-[#FFF0B8] border-2 border-[#19130F] text-[#19130F] shadow-[2px_2px_0px_#19130F]"
+                className="relative p-2 rounded-xl bg-white border-2 border-[#19130F] text-[#19130F] shadow-[2px_2px_0px_#19130F]"
               >
                 <ShoppingBag className="w-5 h-5 stroke-[2.5]" />
                 {itemCount > 0 && (
@@ -227,7 +227,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl bg-[#FFF0B8] border-2 border-[#19130F] text-[#19130F] hover:bg-white focus:outline-none shadow-[2px_2px_0px_#19130F]"
+              className="p-2 rounded-xl bg-white border-2 border-[#19130F] text-[#19130F] hover:bg-orange-50 focus:outline-none shadow-[2px_2px_0px_#19130F]"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5 stroke-[2.5]" /> : <Menu className="w-5 h-5 stroke-[2.5]" />}
@@ -239,11 +239,11 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#FF7900] border-t-2 border-[#19130F] px-4 pt-4 pb-6 space-y-3">
+        <div className="md:hidden bg-white border-t-2 border-[#19130F] px-4 pt-4 pb-6 space-y-3">
           <Link
             to="/outlets"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2.5 px-3 rounded-xl font-black text-[#19130F] bg-[#FFF0B8]/60 hover:bg-[#FFF0B8] flex items-center justify-between border-2 border-[#19130F]"
+            className="block py-2.5 px-3 rounded-xl font-black text-[#19130F] bg-orange-50/70 hover:bg-orange-100 flex items-center justify-between border-2 border-[#19130F]"
           >
             <span>Campus Canteens</span>
             <ChevronRight className="w-4 h-4 text-[#19130F] stroke-[2.5]" />
@@ -252,7 +252,7 @@ export default function Navbar() {
           <Link
             to="/#how-it-works"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2.5 px-3 rounded-xl font-black text-[#19130F] bg-[#FFF0B8]/40 hover:bg-[#FFF0B8] flex items-center justify-between border border-[#19130F]"
+            className="block py-2.5 px-3 rounded-xl font-black text-[#19130F] bg-gray-50 hover:bg-gray-100 flex items-center justify-between border border-[#19130F]"
           >
             <span>How It Works</span>
             <ChevronRight className="w-4 h-4 text-[#19130F] stroke-[2.5]" />
@@ -262,7 +262,7 @@ export default function Navbar() {
             <Link
               to="/my-orders"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-2.5 px-3 rounded-xl font-black text-[#19130F] bg-[#FFF0B8]/40 hover:bg-[#FFF0B8] flex items-center justify-between border border-[#19130F]"
+              className="block py-2.5 px-3 rounded-xl font-black text-[#19130F] bg-gray-50 hover:bg-gray-100 flex items-center justify-between border border-[#19130F]"
             >
               <span>My Orders</span>
               <ChevronRight className="w-4 h-4 text-[#19130F] stroke-[2.5]" />
@@ -274,21 +274,21 @@ export default function Navbar() {
               <Link
                 to="/vendor/dashboard"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-2.5 px-3 rounded-xl font-black text-[#19130F] bg-[#FFF0B8]/40 hover:bg-[#FFF0B8] border border-[#19130F]"
+                className="block py-2.5 px-3 rounded-xl font-black text-[#19130F] bg-gray-50 hover:bg-gray-100 border border-[#19130F]"
               >
                 Vendor Dashboard
               </Link>
               <Link
                 to="/vendor/orders"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-2.5 px-3 rounded-xl font-black text-[#19130F] bg-[#FFF0B8]/40 hover:bg-[#FFF0B8] border border-[#19130F]"
+                className="block py-2.5 px-3 rounded-xl font-black text-[#19130F] bg-gray-50 hover:bg-gray-100 border border-[#19130F]"
               >
                 Live Orders
               </Link>
               <Link
                 to="/vendor/menu"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-2.5 px-3 rounded-xl font-black text-[#19130F] bg-[#FFF0B8]/40 hover:bg-[#FFF0B8] border border-[#19130F]"
+                className="block py-2.5 px-3 rounded-xl font-black text-[#19130F] bg-gray-50 hover:bg-gray-100 border border-[#19130F]"
               >
                 Menu Management
               </Link>
@@ -299,22 +299,22 @@ export default function Navbar() {
             <Link
               to="/admin"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-2.5 px-3 rounded-xl font-black text-[#19130F] bg-[#FFF0B8]/80 hover:bg-[#FFF0B8] border-2 border-[#19130F]"
+              className="block py-2.5 px-3 rounded-xl font-black text-[#19130F] bg-orange-50 hover:bg-orange-100 border-2 border-[#19130F]"
             >
               Admin Console
             </Link>
           )}
 
-          <div className="pt-3 border-t-2 border-[#19130F]/20">
+          <div className="pt-3 border-t-2 border-gray-100">
             {isAuthenticated ? (
               <div className="space-y-3">
-                <div className="flex items-center gap-3 px-3 py-1 bg-[#FFF0B8] rounded-xl border-2 border-[#19130F]">
+                <div className="flex items-center gap-3 px-3 py-2 bg-gray-50 rounded-xl border-2 border-[#19130F]">
                   <div className="w-8 h-8 rounded-lg bg-[#FF3D0A] text-white font-black flex items-center justify-center text-xs border border-[#19130F]">
                     {user.name?.charAt(0) || 'U'}
                   </div>
                   <div>
                     <div className="text-sm font-black text-[#19130F]">{user.name}</div>
-                    <div className="text-xs text-[#19130F]/70 font-semibold">{user.email}</div>
+                    <div className="text-xs text-gray-500 font-semibold">{user.email}</div>
                   </div>
                 </div>
                 <button
@@ -337,7 +337,7 @@ export default function Navbar() {
                 <Link
                   to="/register"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-2.5 text-center font-black text-white bg-[#FF3D0A] rounded-xl border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]"
+                  className="py-2.5 text-center font-black text-white bg-[#FF7900] rounded-xl border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]"
                 >
                   Register
                 </Link>

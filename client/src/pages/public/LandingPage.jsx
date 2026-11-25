@@ -67,11 +67,11 @@ export default function LandingPage() {
   return (
     <div className="space-y-16 sm:space-y-24 pb-20">
       
-      {/* HERO SECTION — VIBRANT PRIMARY ORANGE & BUTTER CREAM THEME */}
-      <section className="relative overflow-hidden bg-[#FF7900] border-b-4 border-[#19130F] pt-12 pb-20 md:pt-16 md:pb-28 px-4 sm:px-6 lg:px-8">
+      {/* HERO SECTION — CLEAN WHITE CANVAS WITH HIGHLIGHTED BRAND ACCENTS */}
+      <section className="relative overflow-hidden bg-white border-b-2 border-[#19130F] pt-12 pb-20 md:pt-16 md:pb-28 px-4 sm:px-6 lg:px-8">
         
         {/* Subtle halftone dot pattern */}
-        <div className="absolute inset-0 bg-halftone-subtle opacity-40 pointer-events-none" />
+        <div className="absolute inset-0 bg-halftone-subtle opacity-15 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
           
@@ -87,12 +87,12 @@ export default function LandingPage() {
             {/* Primary Headline */}
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.08] text-[#19130F]">
               Skip the Queue. <br />
-              <span className="text-[#FF3D0A] drop-shadow-[2.5px_2.5px_0px_#FFF0B8]">Order Ahead.</span> <br />
+              <span className="text-[#FF7900]">Order Ahead.</span> <br />
               Pick Up Between Classes.
             </h1>
 
             {/* Supporting Description */}
-            <p className="text-base sm:text-lg md:text-xl text-[#19130F] font-bold max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 font-bold max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               Browse your campus canteens, order your favourite food before the rush, and collect it when it’s ready. Spend your break enjoying your food, not standing in line.
             </p>
 
@@ -100,7 +100,7 @@ export default function LandingPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
               <Link
                 to="/outlets"
-                className="w-full sm:w-auto px-8 py-4 bg-[#FF3D0A] hover:bg-[#E03508] text-white font-display text-lg tracking-wide rounded-2xl border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] hover:shadow-[6px_6px_0px_#19130F] hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_#19130F] transition-all flex items-center justify-center gap-2.5"
+                className="w-full sm:w-auto px-8 py-4 bg-[#FF7900] hover:bg-[#E66D00] text-white font-display text-lg tracking-wide rounded-2xl border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] hover:shadow-[6px_6px_0px_#19130F] hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_#19130F] transition-all flex items-center justify-center gap-2.5"
               >
                 <span>Order Ahead</span>
                 <ArrowRight className="w-5 h-5 stroke-[3] text-white" />
@@ -108,24 +108,24 @@ export default function LandingPage() {
 
               <a
                 href="#canteens"
-                className="w-full sm:w-auto px-7 py-4 bg-[#FFF0B8] hover:bg-white text-[#19130F] font-black text-base rounded-2xl border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] hover:shadow-[6px_6px_0px_#19130F] hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_#19130F] transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-7 py-4 bg-[#FFF0B8] hover:bg-[#FFE699] text-[#19130F] font-black text-base rounded-2xl border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] hover:shadow-[6px_6px_0px_#19130F] hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_#19130F] transition-all flex items-center justify-center gap-2"
               >
                 <span>Explore Campus Canteens</span>
               </a>
             </div>
 
             {/* Value bullets */}
-            <div className="pt-6 grid grid-cols-3 gap-2 sm:gap-4 border-t-2 border-[#19130F]/20 text-left">
+            <div className="pt-6 grid grid-cols-3 gap-2 sm:gap-4 border-t-2 border-gray-200 text-left">
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#19130F] shrink-0 mt-0.5 stroke-[2.5]" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5 stroke-[2.5]" />
                 <span className="text-xs sm:text-sm font-black text-[#19130F]">Counter Pickup Only</span>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#19130F] shrink-0 mt-0.5 stroke-[2.5]" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5 stroke-[2.5]" />
                 <span className="text-xs sm:text-sm font-black text-[#19130F]">Live Queue Tracking</span>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#19130F] shrink-0 mt-0.5 stroke-[2.5]" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5 stroke-[2.5]" />
                 <span className="text-xs sm:text-sm font-black text-[#19130F]">Zero Delivery Fee</span>
               </div>
             </div>
@@ -294,10 +294,10 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5">
             
             {/* Step 01 */}
-            <div className="bg-[#FFFBF0] rounded-3xl p-5 border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] hover:shadow-[6px_6px_0px_#19130F] hover:-translate-y-0.5 transition-all flex flex-col justify-between">
+            <div className="bg-[#F8F9FA] hover:bg-orange-50/40 rounded-3xl p-5 border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] hover:shadow-[6px_6px_0px_#19130F] hover:-translate-y-0.5 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <div className="w-11 h-9 rounded-xl bg-[#FF7900] text-[#19130F] flex items-center justify-center font-display font-black text-base border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]">
+                  <div className="w-11 h-9 rounded-xl bg-[#FF7900] text-white flex items-center justify-center font-display font-black text-base border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]">
                     01
                   </div>
                   <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 bg-[#FFF0B8] border border-[#19130F] rounded-md text-[#19130F]">
@@ -321,7 +321,7 @@ export default function LandingPage() {
             </div>
 
             {/* Step 02 */}
-            <div className="bg-[#FFFBF0] rounded-3xl p-5 border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] hover:shadow-[6px_6px_0px_#19130F] hover:-translate-y-0.5 transition-all flex flex-col justify-between">
+            <div className="bg-[#F8F9FA] hover:bg-orange-50/40 rounded-3xl p-5 border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] hover:shadow-[6px_6px_0px_#19130F] hover:-translate-y-0.5 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="w-11 h-9 rounded-xl bg-[#FF3D0A] text-white flex items-center justify-center font-display font-black text-base border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]">
@@ -348,7 +348,7 @@ export default function LandingPage() {
             </div>
 
             {/* Step 03 */}
-            <div className="bg-[#FFFBF0] rounded-3xl p-5 border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] hover:shadow-[6px_6px_0px_#19130F] hover:-translate-y-0.5 transition-all flex flex-col justify-between">
+            <div className="bg-[#F8F9FA] hover:bg-orange-50/40 rounded-3xl p-5 border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] hover:shadow-[6px_6px_0px_#19130F] hover:-translate-y-0.5 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="w-11 h-9 rounded-xl bg-[#19130F] text-[#FFF0B8] flex items-center justify-center font-display font-black text-base border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]">
@@ -375,10 +375,10 @@ export default function LandingPage() {
             </div>
 
             {/* Step 04 */}
-            <div className="bg-[#FFFBF0] rounded-3xl p-5 border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] hover:shadow-[6px_6px_0px_#19130F] hover:-translate-y-0.5 transition-all flex flex-col justify-between">
+            <div className="bg-[#F8F9FA] hover:bg-orange-50/40 rounded-3xl p-5 border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] hover:shadow-[6px_6px_0px_#19130F] hover:-translate-y-0.5 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <div className="w-11 h-9 rounded-xl bg-[#FF7900] text-[#19130F] flex items-center justify-center font-display font-black text-base border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]">
+                  <div className="w-11 h-9 rounded-xl bg-[#FF7900] text-white flex items-center justify-center font-display font-black text-base border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]">
                     04
                   </div>
                   <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 bg-[#FFF0B8] border border-[#19130F] rounded-md text-[#19130F]">
@@ -402,7 +402,7 @@ export default function LandingPage() {
             </div>
 
             {/* Step 05 */}
-            <div className="bg-[#FFFBF0] rounded-3xl p-5 border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] hover:shadow-[6px_6px_0px_#19130F] hover:-translate-y-0.5 transition-all flex flex-col justify-between">
+            <div className="bg-[#F8F9FA] hover:bg-orange-50/40 rounded-3xl p-5 border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] hover:shadow-[6px_6px_0px_#19130F] hover:-translate-y-0.5 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="w-11 h-9 rounded-xl bg-[#FF3D0A] text-white flex items-center justify-center font-display font-black text-base border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F]">
@@ -437,7 +437,7 @@ export default function LandingPage() {
       <section id="canteens" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 gap-4">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF7900] text-[#19130F] text-xs font-black uppercase tracking-wider border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F] mb-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF7900] text-white text-xs font-black uppercase tracking-wider border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F] mb-2">
               <Store className="w-3.5 h-3.5 stroke-[2.5]" />
               <span>Campus Locations</span>
             </div>
@@ -526,7 +526,7 @@ export default function LandingPage() {
       {/* POPULAR CAMPUS BITES */}
       {featuredItems.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#FFF0B8] rounded-[32px] p-6 sm:p-8 border-3 border-[#19130F] shadow-[7px_7px_0px_#19130F]">
+          <div className="bg-white rounded-[32px] p-6 sm:p-8 border-3 border-[#19130F] shadow-[7px_7px_0px_#19130F]">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-2">
               <div>
                 <span className="text-xs uppercase font-black tracking-wider text-[#FF3D0A] px-2.5 py-0.5 bg-white border border-[#19130F] rounded-md inline-block mb-1">
@@ -658,27 +658,32 @@ export default function LandingPage() {
 
       {/* FINAL CALL TO ACTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#FF7900] rounded-[32px] p-10 md:p-14 text-[#19130F] text-center border-3 border-[#19130F] shadow-[8px_8px_0px_#19130F] relative overflow-hidden">
+        <div className="bg-white rounded-[32px] p-10 md:p-14 text-[#19130F] text-center border-3 border-[#19130F] shadow-[8px_8px_0px_#19130F] relative overflow-hidden">
           
           <div className="relative z-10 space-y-4 max-w-2xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF0B8] text-[#19130F] font-black text-xs tracking-wider uppercase border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F] mx-auto">
+              <Sparkles className="w-4 h-4 text-[#FF3D0A] stroke-[2.5]" />
+              <span>Campus Queue Skipping</span>
+            </div>
+
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-[#19130F]">
               Ready to reclaim your lunch break?
             </h2>
-            <p className="text-base sm:text-lg text-[#19130F] font-bold leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-700 font-bold leading-relaxed">
               Join hundreds of campus students ordering meals ahead from Central Food Court, North Block Tuck, and Science Cafe.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <Link
                 to="/outlets"
-                className="w-full sm:w-auto px-8 py-4 bg-[#FF3D0A] hover:bg-[#E03508] text-white font-display text-base tracking-wide rounded-2xl border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] active:translate-y-0.5 active:shadow-[1px_1px_0px_#19130F] transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 bg-[#FF7900] hover:bg-[#E66D00] text-white font-display text-base tracking-wide rounded-2xl border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] active:translate-y-0.5 active:shadow-[1px_1px_0px_#19130F] transition-all flex items-center justify-center gap-2"
               >
                 <span>Start Pre-Ordering Now</span>
                 <ArrowRight className="w-4 h-4 stroke-[3]" />
               </Link>
               <Link
                 to="/register"
-                className="w-full sm:w-auto px-7 py-4 bg-[#FFF0B8] hover:bg-white text-[#19130F] font-black text-base rounded-2xl border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] active:translate-y-0.5 active:shadow-[1px_1px_0px_#19130F] transition-all"
+                className="w-full sm:w-auto px-7 py-4 bg-[#FFF0B8] hover:bg-[#FFE699] text-[#19130F] font-black text-base rounded-2xl border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] active:translate-y-0.5 active:shadow-[1px_1px_0px_#19130F] transition-all"
               >
                 Create Free Student Account
               </Link>

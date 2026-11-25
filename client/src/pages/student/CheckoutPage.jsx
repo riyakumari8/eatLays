@@ -176,17 +176,17 @@ export default function CheckoutPage() {
           </div>
 
           {/* Payment Method Notice */}
-          <div className="bg-[#FFF0B8] rounded-3xl p-6 border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] space-y-3">
+          <div className="bg-white rounded-3xl p-6 border-2 border-[#19130F] shadow-[4px_4px_0px_#19130F] space-y-3">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#FF7900] text-[#19130F] border-2 border-[#19130F] flex items-center justify-center font-black shadow-[2px_2px_0px_#19130F]">
+              <div className="w-10 h-10 rounded-xl bg-[#FF7900] text-white border-2 border-[#19130F] flex items-center justify-center font-black shadow-[2px_2px_0px_#19130F]">
                 <Coins className="w-5 h-5 stroke-[2.5]" />
               </div>
               <div>
                 <h4 className="font-display text-base font-black text-[#19130F]">Pay at Counter upon Pickup</h4>
-                <p className="text-xs text-gray-700 font-bold">Fast express verification</p>
+                <p className="text-xs text-gray-500 font-bold">Fast express verification</p>
               </div>
             </div>
-            <p className="text-xs text-gray-800 leading-relaxed font-bold">
+            <p className="text-xs text-gray-700 leading-relaxed font-semibold">
               No online payment gateway needed! Pay via <strong>UPI (GPay / PhonePe / Paytm)</strong>, <strong>Campus Meal Card</strong>, or <strong>Cash</strong> when collecting your food at the counter.
             </p>
           </div>

@@ -83,7 +83,7 @@ export default function MyOrdersPage() {
           onClick={() => setActiveTab('ACTIVE')}
           className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center gap-2 border-2 ${
             activeTab === 'ACTIVE'
-              ? 'bg-[#FF7900] text-[#19130F] border-[#19130F] shadow-[3px_3px_0px_#19130F]'
+              ? 'bg-[#FF7900] text-white border-[#19130F] shadow-[3px_3px_0px_#19130F]'
               : 'bg-white text-gray-600 border-gray-300 hover:border-[#19130F]'
           }`}
         >
@@ -99,7 +99,7 @@ export default function MyOrdersPage() {
           onClick={() => setActiveTab('HISTORY')}
           className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center gap-2 border-2 ${
             activeTab === 'HISTORY'
-              ? 'bg-[#FF7900] text-[#19130F] border-[#19130F] shadow-[3px_3px_0px_#19130F]'
+              ? 'bg-[#FF7900] text-white border-[#19130F] shadow-[3px_3px_0px_#19130F]'
               : 'bg-white text-gray-600 border-gray-300 hover:border-[#19130F]'
           }`}
         >
@@ -129,7 +129,7 @@ export default function MyOrdersPage() {
           </p>
           <Link
             to="/outlets"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FF7900] text-[#19130F] font-black text-xs rounded-xl border-2 border-[#19130F] shadow-[3px_3px_0px_#19130F] hover:shadow-[1px_1px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 transition-all"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FF7900] hover:bg-[#E66D00] text-white font-black text-xs rounded-xl border-2 border-[#19130F] shadow-[3px_3px_0px_#19130F] hover:shadow-[1px_1px_0px_#19130F] active:translate-x-0.5 active:translate-y-0.5 transition-all"
           >
             <span>Explore Campus Menus</span>
             <ArrowRight className="w-4 h-4 stroke-[3]" />

@@ -130,13 +130,13 @@ export default function OrderTrackingPage() {
       {!isCancelled && (
         <div className={`p-6 sm:p-8 rounded-3xl border-2 border-[#19130F] shadow-[6px_6px_0px_#19130F] flex flex-col sm:flex-row items-center justify-between gap-6 ${
           order.status === 'READY' 
-            ? 'bg-emerald-300 text-[#19130F]' 
-            : 'bg-[#FF7900] text-[#19130F]'
+            ? 'bg-emerald-50 text-[#19130F]' 
+            : 'bg-white text-[#19130F]'
         }`}>
           <div className="space-y-2 text-center sm:text-left">
             <div className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider border-2 border-[#19130F] shadow-[2px_2px_0px_#19130F] ${
               order.status === 'READY'
-                ? 'bg-white text-[#19130F]'
+                ? 'bg-emerald-300 text-[#19130F]'
                 : 'bg-[#FFF0B8] text-[#19130F]'
             }`}>
               {order.status === 'READY' ? (
@@ -156,17 +156,17 @@ export default function OrderTrackingPage() {
               Collect at {order.outlet?.name}
             </h3>
 
-            <p className="text-xs flex items-center justify-center sm:justify-start gap-1 font-bold text-[#19130F]">
+            <p className="text-xs flex items-center justify-center sm:justify-start gap-1 font-bold text-gray-700">
               <MapPin className="w-3.5 h-3.5 text-[#FF3D0A] stroke-[2.5]" />
               <span>{order.outlet?.location}</span>
             </p>
           </div>
 
-          <div className="bg-[#FFF0B8] text-[#19130F] px-7 py-5 rounded-3xl text-center shadow-[4px_4px_0px_#19130F] border-2 border-[#19130F] shrink-0">
-            <span className="block text-[10px] uppercase font-black tracking-widest text-[#FF3D0A]">
+          <div className="bg-[#FF7900] text-white px-7 py-5 rounded-3xl text-center shadow-[4px_4px_0px_#19130F] border-2 border-[#19130F] shrink-0">
+            <span className="block text-[10px] uppercase font-black tracking-widest text-[#FFF0B8]">
               Pickup Token Code
             </span>
-            <span className="font-mono text-4xl sm:text-5xl font-black tracking-widest text-[#19130F] my-1 block">
+            <span className="font-mono text-4xl sm:text-5xl font-black tracking-widest text-white my-1 block">
               {order.pickupCode}
             </span>
             <span className="inline-block px-2.5 py-0.5 rounded-md bg-white text-[10px] font-black text-[#19130F] border border-[#19130F]">
